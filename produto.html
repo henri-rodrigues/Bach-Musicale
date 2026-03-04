@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produto - Bach Musicale</title>
+  <link rel="stylesheet" href="styleHome.css" />
+  <link rel="stylesheet" href="produtos.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">Bach Musicale</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#produtos">Produtos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="carrinho.html" class="carrinho-link">Carrinho</a>
+    </nav>
+  </header>
+
+  <main class="produto-detalhe">
+    <div class="produto-container">
+
+      <div class="produto-imagens">
+        <img
+          src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
+          alt="Violino Bach Musicale"
+          class="imagem-principal"
+          id="imagemPrincipal"
+        />
+
+        <div class="miniaturas">
+          <img
+            src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=150&q=80"
+            alt="Miniatura 1"
+            onclick="trocarImagem(this)"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=150&q=80"
+            alt="Miniatura 2"
+            onclick="trocarImagem(this)"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=150&q=80"
+            alt="Miniatura 3"
+            onclick="trocarImagem(this)"
+          />
+        </div>
+      </div>
+
+      <div class="produto-info">
+        <h1>Violino Bach Musicale 2025</h1>
+        <p class="preco">R$ 12.500,00</p>
+
+        <p class="descricao">
+          Violino artesanal feito com madeira selecionada, acabamento impecável e som cristalino para músicos exigentes.
+        </p>
+
+        <div class="opcoes">
+          <label for="acabamento">Acabamento:</label>
+          <select id="acabamento" name="acabamento">
+            <option value="natural">Natural</option>
+            <option value="escuro">Escuro</option>
+            <option value="claro">Claro</option>
+          </select>
+        </div>
+
+        <button class="btn-adicionar">Adicionar ao Carrinho</button>
+
+        <div class="avaliacoes-produto">
+          <span class="estrelas">★★★★★</span>
+          <span class="num-avaliacoes">(28 avaliações)</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    function trocarImagem(el) {
+      const principal = document.getElementById('imagemPrincipal');
+      principal.src = el.src;
+
+      const miniaturas = el.parentElement.querySelectorAll('img');
+      miniaturas.forEach(img => img.classList.remove('active'));
+
+      el.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const primeira = document.querySelector('.miniaturas img');
+      if (primeira) primeira.classList.add('active');
+    });
+  </script>
+</body>
+</html>
