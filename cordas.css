@@ -76,6 +76,81 @@
     opacity: 0.9;
     font-weight: 300;
 }
+/* --- Estilos do Header (Fix para Imagem 1) --- */
+#main-header {
+    background-color: var(--color-bg-light);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+}
+
+/* Alinha Cordas, Madeira, Metais, etc. lado a lado */
+.nav-list {
+    display: flex;
+    list-style: none; /* Remove as bolinhas pretas */
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: var(--transition-ease);
+}
+
+.nav-item a:hover {
+    color: var(--color-primary);
+}
+
+/* Alinha a Lupa, Carrinho e User */
+.header-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.header-actions a, .header-actions button {
+    color: #4a3728; /* Cor marrom da logo */
+    font-size: 1.1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-ease);
+}
+
+/* Esconde o submenu por padrão */
+.submenu {
+    display: none;
+    position: absolute;
+    background: var(--color-white);
+    padding: 1rem;
+    box-shadow: var(--shadow-subtle);
+    list-style: none;
+}
+
+/* Mostra o campo de busca apenas quando ativado */
+.search-overlay {
+    display: none;
+}
+
+.search-overlay.active {
+    display: flex;
+}
 
 /* --- Category Sections (Violino, Violão, etc.) --- */
 .category-section {
@@ -396,4 +471,5 @@
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
+
 }
