@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bach Musicale | Violinos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="lista_de_produtos.css" />
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a href="home.html" class="logo">Bach Musicale</a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item has-submenu">
+                        <a href="cordas.html">Cordas <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="cordas.html#violino">Violino</a></li>
+                            <li><a href="cordas.html#violao">Violão</a></li>
+                            <li><a href="cordas.html#guitarra">Guitarra</a></li>
+                            <li><a href="cordas.html#baixo">Baixo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="madeiras.html">Madeira <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="madeiras.html#flauta">Flauta</a></li>
+                            <li><a href="madeiras.html#clarinete">Clarinete</a></li>
+                            <li><a href="madeiras.html#oboe">Oboé</a></li>
+                            <li><a href="madeiras.html#sax">Saxofone</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="metais.html">Metais <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="metais.html#trompete">Trompete</a></li>
+                            <li><a href="metais.html#trombone">Trombone</a></li>
+                            <li><a href="metais.html#tuba">Tuba</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="teclas.html">Teclas <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="teclas.html#piano">Piano</a></li>
+                            <li><a href="teclas.html#teclado">Teclado</a></li>
+                            <li><a href="teclas.html#orgao">Órgão</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="search-toggle" aria-label="Abrir busca"><i class="fas fa-search"></i></button>
+                <a href="#" class="cart-icon" aria-label="Carrinho de compras"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="account-icon" aria-label="Minha conta"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+        <div class="search-overlay" id="search-overlay">
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="Buscar instrumentos..." class="search-input" />
+                <button class="close-search" aria-label="Fechar busca"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="violinos-page">
+
+        <section class="products-grid-section">
+            <div class="container">
+                <h2 class="section-title">Nossos Violinos</h2>
+                <div class="filter-sort-bar">
+                    <div class="filter-options">
+                        <label for="brand-filter">Marca:</label>
+                        <select id="brand-filter">
+                            <option value="">Todas</option>
+                            <option value="stradivarius">Stradivarius</option>
+                            <option value="guarneri">Guarneri</option>
+                            <option value="yamaha">Yamaha</option>
+                            <option value="gamba">Gamba</option>
+                        </select>
+                    </div>
+                    <div class="sort-options">
+                        <label for="sort-by">Ordenar por:</label>
+                        <select id="sort-by">
+                            <option value="price-asc">Preço: Menor para Maior</option>
+                            <option value="price-desc">Preço: Maior para Menor</option>
+                            <option value="name-asc">Nome: A-Z</option>
+                            <option value="name-desc">Nome: Z-A</option>
+                            <option value="rating-desc">Avaliação: Maior para Menor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="violins-grid">
+                    </div>
+
+                <div class="pagination" id="violins-pagination">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Bach Musicale</h3>
+                <p>Onde a excelência ressoa em cada nota.</p>
+            </div>
+
+            <nav class="footer-nav">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cordas.html">Produtos</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone-alt"></i> (11) 1234-5678</p>
+                <p><i class="fas fa-envelope"></i> atendimento@bachmusicale.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rua da Harmonia, 100 - São Paulo, SP</p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Conecte-se</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube" class="youtube-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Spotify" class="spotify-icon"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Bach Musicale. Todos os direitos reservados. Design por [Seu Nome/Agência]</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Seus dados de violinos (você pode substituir as URLs de imagem por suas imagens reais)
+           // Seus dados de violinos (com imagens reais ou paths corretos)
+            const violins = [
+                {
+                    id: 1,
+                    name: 'Violino de Concerto 4/4',
+                    description: 'Som rico e projeção excepcional, ideal para solistas.',
+                    price: 15000.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg', // Usando sua imagem
+                    rating: 5,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 2,
+                    name: 'Violino Estudante 3/4',
+                    description: 'Excelente opção para iniciantes, fácil de tocar e durável.',
+                    price: 1800.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg', // Usando sua imagem
+                    rating: 3.5,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 3,
+                    name: 'Violino Elétrico Moderno',
+                    description: 'Versatilidade para performances ao vivo e gravação, com design arrojado.',
+                    price: 3500.00,
+                    imageUrl: 'ad581041666ec49768e50de5d2d00e351.jpg', // Usando sua imagem
+                    rating: 4,
+                    brand: 'Guarneri'
+                },
+                {
+                    id: 4,
+                    name: 'Violino Antigo 1/2 (Recondicionado)',
+                    description: 'Peça única com sonoridade vintage e história, para colecionadores.',
+                    price: 8000.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg', // Usando sua imagem
+                    rating: 4.5,
+                    brand: 'Gamba'
+                },
+                {
+                    id: 5,
+                    name: 'Violino Intermediário 4/4',
+                    description: 'Equilíbrio perfeito entre qualidade e custo, para estudantes avançados.',
+                    price: 4500.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg', // Usando sua imagem
+                    rating: 4,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 6,
+                    name: 'Violino Digital Silencioso',
+                    description: 'Prática discreta com fones de ouvido, ideal para qualquer hora e lugar.',
+                    price: 2200.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg', // Repetindo sua imagem
+                    rating: 3.5,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 7,
+                    name: 'Violino Barroco Artesanal',
+                    description: 'Construção tradicional para sonoridade autêntica da música barroca.',
+                    price: 18000.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg', // Repetindo sua imagem
+                    rating: 5,
+                    brand: 'Guarneri'
+                },
+                {
+                    id: 8,
+                    name: 'Violino Estudante 1/4',
+                    description: 'Tamanho ideal para crianças, com boa resposta e durabilidade.',
+                    price: 1500.00,
+                    imageUrl: 'ad581041666ec49768e50de5d2d00e351.jpg', // Repetindo sua imagem
+                    rating: 3,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 9,
+                    name: 'Violino Profissional 7/8',
+                    description: 'Qualidade profissional em tamanho ligeiramente menor para conforto.',
+                    price: 12000.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg', // Repetindo sua imagem
+                    rating: 4.5,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 10,
+                    name: 'Violino Colorido Moderno',
+                    description: 'Design vibrante e som surpreendente para quem busca estilo.',
+                    price: 2500.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg', // Repetindo sua imagem
+                    rating: 2.5,
+                    brand: 'Gamba'
+                },
+                {
+                    id: 11,
+                    name: 'Violino Acústico Básico 4/4',
+                    description: 'Ideal para o primeiro contato com o instrumento, boa sonoridade e preço.',
+                    price: 1200.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 3.5,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 12,
+                    name: 'Violino Orquestral',
+                    description: 'Desenvolvido para músicos de orquestra, com equilíbrio e projeção.',
+                    price: 10000.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 5,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 13,
+                    name: 'Violino Infantil 1/8',
+                    description: 'Perfeito para as primeiras aulas de crianças pequenas.',
+                    price: 950.00,
+                    imageUrl: 'ad581041666ec49768e50de5d2d00e351.jpg',
+                    rating: 3,
+                    brand: 'Gamba'
+                },
+                {
+                    id: 14,
+                    name: 'Violino Semiprofissional',
+                    description: 'Qualidade sonora aprimorada para estudantes avançados.',
+                    price: 6000.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4,
+                    brand: 'Guarneri'
+                },
+                {
+                    id: 15,
+                    name: 'Violino de Viagem',
+                    description: 'Leve e compacto, ideal para músicos em movimento.',
+                    price: 2800.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 3.5,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 16,
+                    name: 'Violino de Luxo',
+                    description: 'Feito com madeiras raras e acabamento primoroso.',
+                    price: 25000.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 5,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 17,
+                    name: 'Violino Clássico',
+                    description: 'Design tradicional com excelente projeção sonora.',
+                    price: 7000.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4.5,
+                    brand: 'Guarneri'
+                },
+                {
+                    id: 18,
+                    name: 'Violino Artístico',
+                    description: 'Cada peça é única, com detalhes feitos à mão.',
+                    price: 11000.00,
+                    imageUrl: 'ad581041666ec49768e50de5d2d00e351.jpg',
+                    rating: 4,
+                    brand: 'Gamba'
+                },
+                {
+                    id: 19,
+                    name: 'Violino Iniciante Kit',
+                    description: 'Completo com arco, estojo e resina, pronto para tocar.',
+                    price: 1600.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 3.5,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 20,
+                    name: 'Violino Concertista',
+                    description: 'Respostas rápidas e sonoridade brilhante para palcos.',
+                    price: 20000.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 5,
+                    brand: 'Stradivarius'
+                },
+                // Novos itens adicionados para mais páginas
+                {
+                    id: 21,
+                    name: 'Violino Estudante 1/16',
+                    description: 'Tamanho super pequeno, ideal para crianças muito jovens.',
+                    price: 800.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 2.5,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 22,
+                    name: 'Violino Custom Shop',
+                    description: 'Feito sob medida, com personalização completa.',
+                    price: 30000.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 5,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 23,
+                    name: 'Violino Acústico 3/4',
+                    description: 'Versão mais compacta com som vibrante.',
+                    price: 1700.00,
+                    imageUrl: 'ad581041666ec49768e50de5d2d00e351.jpg',
+                    rating: 3.5,
+                    brand: 'Guarneri'
+                },
+                {
+                    id: 24,
+                    name: 'Violino Vintage Recondicionado',
+                    description: 'Restauração de peças clássicas com som autêntico.',
+                    price: 9000.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4,
+                    brand: 'Gamba'
+                },
+                {
+                    id: 25,
+                    name: 'Violino Profissional 4/4',
+                    description: 'Escolha de orquestras, com ressonância profunda.',
+                    price: 17500.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 5,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 26,
+                    name: 'Violino para Jazz',
+                    description: 'Sonoridade quente e versátil para improvisação.',
+                    price: 4000.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 4,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 27,
+                    name: 'Violino de Estudo Avançado',
+                    description: 'Para quem busca aprimorar técnica com qualidade.',
+                    price: 3200.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 3.5,
+                    brand: 'Guarneri'
+                },
+                {
+                    id: 28,
+                    name: 'Violino com Detalhes em Madrepérola',
+                    description: 'Design elegante com incrustações artesanais.',
+                    price: 14000.00,
+                    imageUrl: 'ad581041666ec49768e50de5d2d00e351.jpg',
+                    rating: 4.5,
+                    brand: 'Gamba'
+                },
+                {
+                    id: 29,
+                    name: 'Violino Portátil Dobrável',
+                    description: 'Inovador e prático para transportar.',
+                    price: 3800.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 3,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 30,
+                    name: 'Violino Acústico Profissional',
+                    description: 'Timbre puro e ressonância excepcional.',
+                    price: 16000.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 5,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 31,
+                    name: 'Violino de Iniciação',
+                    description: 'Ótima relação custo-benefício para os primeiros passos.',
+                    price: 1000.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 2.5,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 32,
+                    name: 'Violino com Captação Ativa',
+                    description: 'Para amplificação clara e sem ruídos.',
+                    price: 4200.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4,
+                    brand: 'Guarneri'
+                },
+                {
+                    id: 33,
+                    name: 'Violino Artesanal de Mestre',
+                    description: 'Peça de alta arte, sonoridade impecável.',
+                    price: 35000.00,
+                    imageUrl: 'ad581041666ec49768e50de5d2d00e351.jpg',
+                    rating: 5,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 34,
+                    name: 'Violino para Orquestra Jovem',
+                    description: 'Equilibrado e responsivo, ideal para conjuntos.',
+                    price: 5500.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 35,
+                    name: 'Violino Compacto 4/4',
+                    description: 'Design ergonômico para maior conforto.',
+                    price: 2900.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 3.5,
+                    brand: 'Gamba'
+                },
+                {
+                    id: 36,
+                    name: 'Violino para Estúdio',
+                    description: 'Foco na clareza e fidelidade do som gravado.',
+                    price: 6800.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 4.5,
+                    brand: 'Guarneri'
+                },
+                {
+                    id: 37,
+                    name: 'Violino Acústico Clássico',
+                    description: 'Réplica fiel de modelos históricos.',
+                    price: 9500.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4,
+                    brand: 'Stradivarius'
+                },
+                {
+                    id: 38,
+                    name: 'Violino de Prática Silencioso',
+                    description: 'Excelente para estudo sem incomodar os outros.',
+                    price: 2100.00,
+                    imageUrl: 'ad581041666ec49768e50de5d2d00e351.jpg',
+                    rating: 3,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 39,
+                    name: 'Violino com Estojo Reforçado',
+                    description: 'Proteção extra para transporte seguro.',
+                    price: 1900.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 3.5,
+                    brand: 'Gamba'
+                },
+                {
+                    id: 40,
+                    name: 'Violino para Apresentações',
+                    description: 'Projeção e brilho que cativam a audiência.',
+                    price: 13000.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 4.5,
+                    brand: 'Guarneri'
+                }
+            ];
+            const productsPerPage = 8; // Número de produtos por página (para 4 colunas, 2 linhas)
+            let currentPage = 1;
+            let currentFilteredViolins = [...violins]; // Cópia dos violinos para filtrar/ordenar
+
+            const violinsGrid = document.getElementById('violins-grid');
+            const violinsPagination = document.getElementById('violins-pagination');
+            const brandFilter = document.getElementById('brand-filter');
+            const sortBy = document.getElementById('sort-by');
+
+            // Função para renderizar as estrelas de avaliação
+            function renderStars(rating) {
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (rating >= i) {
+                        starsHtml += '<i class="fas fa-star"></i>';
+                    } else if (rating > i - 1 && rating < i) {
+                        starsHtml += '<i class="fas fa-star-half-alt"></i>';
+                    } else {
+                        starsHtml += '<i class="far fa-star"></i>';
+                    }
+                }
+                return starsHtml;
+            }
+
+            // Função para renderizar os produtos no grid
+            function renderProducts() {
+                violinsGrid.innerHTML = ''; // Limpa o grid
+                const startIndex = (currentPage - 1) * productsPerPage;
+                const endIndex = startIndex + productsPerPage;
+                const productsToDisplay = currentFilteredViolins.slice(startIndex, endIndex);
+
+                productsToDisplay.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.classList.add('product-card');
+                    // Adiciona atributos de dados para facilitar filtragem/ordenação no futuro
+                    productCard.setAttribute('data-brand', product.brand.toLowerCase());
+                    productCard.setAttribute('data-price', product.price);
+                    productCard.setAttribute('data-name', product.name.toLowerCase());
+                    productCard.setAttribute('data-rating', product.rating);
+
+                    productCard.innerHTML = `
+                        <div class="product-image-wrapper">
+                            <img src="${product.imageUrl}" alt="${product.name}" />
+                        </div>
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <p class="description">${product.description}</p>
+                            <div class="rating">
+                                ${renderStars(product.rating)}
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                            </div>
+                            <a href="produto.html?id=${product.id}" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    `;
+                    violinsGrid.appendChild(productCard);
+                });
+            }
+
+            // Função para renderizar os links da paginação
+            function renderPagination() {
+                violinsPagination.innerHTML = ''; // Limpa a paginação
+                const totalPages = Math.ceil(currentFilteredViolins.length / productsPerPage);
+                console.log('--- Renderizando Paginação ---');
+                console.log('Total de Violinos Filtrados:', currentFilteredViolins.length);
+                console.log('Total de Páginas:', totalPages);
+                console.log('Página Atual:', currentPage);
+
+                // Botão "Anterior"
+                if (currentPage > 1) {
+                    const prevLink = document.createElement('a');
+                    prevLink.href = '#';
+                    prevLink.classList.add('page-link');
+                    prevLink.textContent = '« Anterior';
+                    prevLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        currentPage--;
+                        console.log('Clicou em Anterior. Nova Página Atual:', currentPage);
+                        applyFiltersAndSort(); // Re-aplicar para manter filtros/ordenar ao mudar de página
+                        window.scrollTo({ top: 0, behavior: 'smooth' }); // Volta para o topo da página
+                    });
+                    violinsPagination.appendChild(prevLink);
+                }
+
+                // Números das páginas
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageLink = document.createElement('a');
+                    pageLink.href = '#';
+                    pageLink.classList.add('page-link');
+                    if (i === currentPage) {
+                        pageLink.classList.add('active');
+                    }
+                    pageLink.textContent = i;
+                    pageLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        currentPage = i;
+                        console.log('Clicou na página ' + i + '. Nova Página Atual:', currentPage);
+                        applyFiltersAndSort(); // Re-aplicar para manter filtros/ordenar ao mudar de página
+                        window.scrollTo({ top: 0, behavior: 'smooth' }); // Volta para o topo da página
+                    });
+                    violinsPagination.appendChild(pageLink);
+                }
+
+                // Botão "Próximo"
+                if (currentPage < totalPages) {
+                    const nextLink = document.createElement('a');
+                    nextLink.href = '#';
+                    nextLink.classList.add('page-link');
+                    nextLink.textContent = 'Próximo »';
+                    nextLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        currentPage++;
+                        console.log('Clicou em Próximo. Nova Página Atual:', currentPage);
+                        applyFiltersAndSort(); // Re-aplicar para manter filtros/ordenar ao mudar de página
+                        window.scrollTo({ top: 0, behavior: 'smooth' }); // Volta para o topo da página
+                    });
+                    violinsPagination.appendChild(nextLink);
+                }
+            }
+
+            // Função para aplicar filtros e ordenação
+            function applyFiltersAndSort() {
+                console.log('*** Executando applyFiltersAndSort ***');
+                // Filtra os produtos
+                const selectedBrand = brandFilter.value.toLowerCase();
+                if (selectedBrand === '') {
+                    currentFilteredViolins = [...violins]; // Se nada selecionado, usa todos os produtos
+                } else {
+                    currentFilteredViolins = violins.filter(product => product.brand.toLowerCase() === selectedBrand);
+                }
+                console.log('Violinos após filtro (Marca: ' + selectedBrand + '):', currentFilteredViolins.length);
+
+                // Ordena os produtos
+                const sortMethod = sortBy.value;
+                currentFilteredViolins.sort((a, b) => {
+                    switch (sortMethod) {
+                        case 'price-asc': return a.price - b.price;
+                        case 'price-desc': return b.price - a.price;
+                        case 'name-asc': return a.name.localeCompare(b.name);
+                        case 'name-desc': return b.name.localeCompare(a.name);
+                        case 'rating-desc': return b.rating - a.rating;
+                        default: return 0;
+                    }
+                });
+                console.log('Violinos após ordenação (Método: ' + sortMethod + '):', currentFilteredViolins.length);
+
+                // currentPage = 1; // Remova ou comente esta linha temporariamente para testar a navegação
+                                 // Se você a mantiver, ela sempre voltará para a página 1 após qualquer filtro/ordenação/clique.
+                                 // Para fins de teste de paginação, comente-a por enquanto.
+
+                renderProducts(); // Renderiza os produtos filtrados/ordenados
+                renderPagination(); // Renderiza a paginação para os novos resultados
+                console.log('*** applyFiltersAndSort Concluído ***');
+            }
+            // Event listeners para os filtros e ordenação
+            brandFilter.addEventListener('change', applyFiltersAndSort);
+            sortBy.addEventListener('change', applyFiltersAndSort);
+
+            // Chama a função inicial para exibir os produtos e a paginação ao carregar a página
+            applyFiltersAndSort();
+
+
+            // SEUS SCRIPTS EXISTENTES DO HEADER E MENU MÓVEL (MANTIDOS AQUI)
+            const searchToggle = document.getElementById('search-toggle');
+            const searchOverlay = document.getElementById('search-overlay');
+            const closeSearch = document.querySelector('.close-search');
+
+            searchToggle.addEventListener('click', () => {
+                searchOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    document.querySelector('.search-input').focus();
+                }, 400);
+            });
+
+            closeSearch.addEventListener('click', () => {
+                searchOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            searchOverlay.addEventListener('click', (event) => {
+                if (event.target === searchOverlay) {
+                    searchOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            document.querySelectorAll('.has-submenu').forEach(item => {
+                const submenuLink = item.querySelector('a');
+                submenuLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1024 || !matchMedia('(hover: hover)').matches) {
+                        e.preventDefault();
+                        item.classList.toggle('active-submenu');
+                    }
+                });
+
+                if (window.innerWidth <= 1024 || !matchMedia('(hover: hover)').matches) {
+                    item.addEventListener('click', (e) => {
+                        document.querySelectorAll('.has-submenu.active-submenu').forEach(openItem => {
+                            if (openItem !== item && !openItem.contains(e.target)) {
+                                openItem.classList.remove('active-submenu');
+                            }
+                        });
+                    });
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                document.querySelectorAll('.has-submenu.active-submenu').forEach(item => {
+                    if (!item.contains(e.target)) {
+                        item.classList.remove('active-submenu');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

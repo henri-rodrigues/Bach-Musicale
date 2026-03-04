@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bach Musicale | Coleção de Madeiras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="madeiras.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a href="home.html" class="logo">Bach Musicale</a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item has-submenu">
+                        <a href="cordas.html">Cordas <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="cordas.html#violino">Violino</a></li>
+                            <li><a href="cordas.html#violao">Violão</a></li>
+                            <li><a href="cordas.html#guitarra">Guitarra</a></li>
+                            <li><a href="cordas.html#baixo">Baixo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="madeiras.html">Madeira <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="madeiras.html#flauta">Flauta</a></li>
+                            <li><a href="madeiras.html#clariente">Clarinete</a></li>
+                            <li><a href="madeiras.html#oboe">Oboé</a></li>
+                            <li><a href="madeiras.html#sax">Saxofone</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="metais.html">Metais <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="metais.html#trompete">Trompete</a></li>
+                            <li><a href="metais.html#trombone">Trombone</a></li>
+                            <li><a href="metais.html#tuba">Tuba</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="teclas.html">Teclas <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="teclas.html#piano">Piano</a></li>
+                            <li><a href="teclas.html#teclado">Teclado</a></li>
+                            <li><a href="teclas.html#orgao">Órgão</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="search-toggle" aria-label="Abrir busca"><i class="fas fa-search"></i></button>
+                <a href="#" class="cart-icon" aria-label="Carrinho de compras"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="account-icon" aria-label="Minha conta"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+        <div class="search-overlay" id="search-overlay">
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="Buscar instrumentos..." class="search-input" />
+                <button class="close-search" aria-label="Fechar busca"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-hero">
+            <div class="category-hero-overlay">
+                <div class="category-hero-content">
+                    <h1>Coleção de Madeiras</h1>
+                    <p>Descubra a rica sonoridade e a expressividade única dos instrumentos de sopro de madeira. De flautas a saxofones, a melodia espera por você.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="flauta" class="category-section">
+            <h2 class="category-title">Flautas</h2>
+            <div class="category-description">
+                <p>Nossa seleção de flautas, de modelos para estudo a instrumentos profissionais, oferece brilho e precisão em cada nota.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="products-carousel">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/606c38/fff?text=Flauta+Transversal" alt="Flauta Transversal Profissional" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Flauta Transversal Profissional</h3>
+                            <p class="description">Som cristalino e mecânica precisa para grandes performances.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 7.800,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/4c673d/fff?text=Flauta+Doce+Soprano" alt="Flauta Doce Soprano" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Flauta Doce Soprano Barroca</h3>
+                            <p class="description">Ideal para iniciantes e repertório clássico.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 350,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/8d8a7c/fff?text=Flautim+Piccolo" alt="Flautim Piccolo Profissional" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Flautim Piccolo Profissional</h3>
+                            <p class="description">Para a mais alta oitava, com brilho e projeção.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 11.200,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/a8a090/fff?text=Flauta+Estudante" alt="Flauta Transversal Estudante" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Flauta Transversal Estudante</h3>
+                            <p class="description">Durabilidade e facilidade de emissão para o aprendizado.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 2.100,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/7c8d62/fff?text=Flauta+Transversal+Prata" alt="Flauta Transversal Prata" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Flauta Transversal Prata</h3>
+                            <p class="description">Corpo em prata maciça para timbre rico e ressonante.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 9.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/a2b29f/fff?text=Flauta+Alto+Profissional" alt="Flauta Alto Profissional" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Flauta Alto Profissional</h3>
+                            <p class="description">Som encorpado e aveludado para orquestras e conjuntos.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 13.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/c7d3b0/fff?text=Flauta+Doce+Contralto" alt="Flauta Doce Contralto" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Flauta Doce Contralto</h3>
+                            <p class="description">Voz mais grave e melancólica, para repertório barroco.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 550,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/e0e5c9/fff?text=Flauta+Traverso+Hist%C3%B3rica" alt="Flauta Traverso Histórica" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Flauta Traverso Histórica</h3>
+                            <p class="description">Réplica fiel para performance autêntica da música antiga.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 18.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="view-all-container">
+                <a href="flautas.html" class="btn-view-all">Ver Todas as Flautas <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="clarinete" class="category-section">
+            <h2 class="category-title">Clarinetes</h2>
+            <div class="category-description">
+                <p>Explore a profundidade e a versatilidade dos clarinetes. De modelos de estudante a instrumentos de concerto, encontre seu som perfeito.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="products-carousel">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/212529/fff?text=Clarinete+Sib+Profissional" alt="Clarinete Sib Profissional" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Clarinete Sib Profissional</h3>
+                            <p class="description">Madeira grenadilla, chaves prateadas, timbre encorpado.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 9.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/343a40/fff?text=Clarinete+Estudante" alt="Clarinete Estudante" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Clarinete Estudante ABS</h3>
+                            <p class="description">Leve, durável e fácil de tocar, para iniciantes.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 1.800,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/495057/fff?text=Clarinete+Alto" alt="Clarinete Alto" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Clarinete Alto Mi Bemol</h3>
+                            <p class="description">Timbre grave e expressivo para orquestras e bandas.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 15.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/6c757d/fff?text=Clarinete+Baixo" alt="Clarinete Baixo" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Clarinete Baixo Profissional</h3>
+                            <p class="description">Notas graves profundas e ressonantes para seções de baixo.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 22.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/868e96/fff?text=Clarinete+Madeira+Estudo" alt="Clarinete Madeira Estudo" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Clarinete Madeira para Estudo</h3>
+                            <p class="description">Qualidade em madeira para um som mais autêntico no estudo.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 5.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/adb5bd/fff?text=Clarinete+Afinacao+La" alt="Clarinete Afinação Lá" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Clarinete Afinação em Lá (A)</h3>
+                            <p class="description">Perfeito para repertório orquestral específico.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 10.200,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ced4da/fff?text=Clarinete+Vintage" alt="Clarinete Vintage" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Clarinete Vintage Restauração</h3>
+                            <p class="description">Peça de colecionador, totalmente restaurada, com timbre clássico.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 18.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/dee2e6/fff?text=Clarinete+Contrabaixo" alt="Clarinete Contrabaixo" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Clarinete Contrabaixo</h3>
+                            <p class="description">A voz mais grave da família, para texturas sonoras raras.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 28.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="view-all-container">
+                <a href="clarinetes.html" class="btn-view-all">Ver Todos os Clarinetes <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="oboe" class="category-section">
+            <h2 class="category-title">Oboés</h2>
+            <div class="category-description">
+                <p>Experimente o timbre penetrante e expressivo do oboé. Instrumentos selecionados pela sua qualidade sonora e artesanato.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="products-carousel">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/5a1818/fff?text=Obo%C3%A9+Profissional" alt="Oboé Profissional" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Oboé Profissional Grenadilla</h3>
+                            <p class="description">Afinação estável, timbre rico, perfeito para solistas.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 25.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/8d0000/fff?text=Obo%C3%A9+Estudante" alt="Oboé Estudante" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Oboé de Estudo Resina</h3>
+                            <p class="description">Leve, resistente, ideal para os primeiros anos de aprendizado.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 6.800,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/a30000/fff?text=Corne+Ingl%C3%AAs" alt="Corne Inglês Profissional" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Corne Inglês Profissional</h3>
+                            <p class="description">A voz mais grave do oboé, com timbre aveludado e melancólico.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 35.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/b30000/fff?text=Obo%C3%A9+Semi-Autom%C3%A1tico" alt="Oboé Semi-Automático" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Oboé Semi-Automático</h3>
+                            <p class="description">Equilíbrio perfeito entre preço e qualidade para estudantes avançados.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 15.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/8b0000/fff?text=Obo%C3%A9+Conservat%C3%B3rio" alt="Oboé Conservatório" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Oboé Conservatório</h3>
+                            <p class="description">Ideal para escolas de música e conjuntos, durável e com boa afinação.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 12.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/cd0000/fff?text=Obo%C3%A9+Barroco" alt="Oboé Barroco" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Oboé Barroco Histórico</h3>
+                            <p class="description">Réplica de oboé barroco para performance autêntica e sonoridade única.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 28.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ff0000/fff?text=Obo%C3%A9+Duplo+Sistema" alt="Oboé Duplo Sistema" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Oboé Duplo Sistema</h3>
+                            <p class="description">Flexibilidade para diferentes estilos de música, com sistema de chaves avançado.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 27.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ff3333/fff?text=Obo%C3%A9+Digital" alt="Oboé Digital" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Oboé Digital de Estudo</h3>
+                            <p class="description">Tecnologia avançada para estudo silencioso e versatilidade sonora.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 4.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="view-all-container">
+                <a href="oboes.html" class="btn-view-all">Ver Todos os Oboés <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="sax" class="category-section">
+            <h2 class="category-title">Saxofones</h2>
+            <div class="category-description">
+                <p>Descubra a versatilidade e o carisma do saxofone. De modelos para jazz e blues a orquestra, encontre o instrumento que ressoa com sua alma musical.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="products-carousel">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ffbf00/333?text=Saxofone+Alto+Profissional" alt="Saxofone Alto Profissional" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Saxofone Alto Profissional</h3>
+                            <p class="description">Timbre quente e brilhante, ideal para jazz e pop.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 15.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ff8c00/333?text=Saxofone+Tenor+Estudante" alt="Saxofone Tenor Estudante" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Saxofone Tenor Estudante</h3>
+                            <p class="description">Durável e com boa projeção, para iniciantes e intermediários.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 9.800,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ff4500/333?text=Saxofone+Soprano+Curvo" alt="Saxofone Soprano Curvo" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Saxofone Soprano Curvo</h3>
+                            <p class="description">Design elegante e timbre lírico, ideal para melodia.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 12.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ff6347/333?text=Saxofone+Bar%C3%ADtono" alt="Saxofone Barítono" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Saxofone Barítono Profissional</h3>
+                            <p class="description">Timbre profundo e poderoso, essencial para big bands.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 28.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ffa07a/333?text=Saxofone+Alto+Vintage" alt="Saxofone Alto Vintage" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Saxofone Alto Vintage</h3>
+                            <p class="description">Som clássico e visual retro, com acabamento envelhecido.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 18.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ff7f50/333?text=Saxofone+Tenor+Laqueado" alt="Saxofone Tenor Laqueado" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Saxofone Tenor Laqueado Ouro</h3>
+                            <p class="description">Acabamento luxuoso e ressonância excepcional.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 11.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ffa500/333?text=Saxofone+Curvo+Estudante" alt="Saxofone Curvo Estudante" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Saxofone Soprano Curvo Estudante</h3>
+                            <p class="description">Ergonomia e facilidade para aprender as primeiras melodias.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 7.200,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/ffbf00/333?text=Saxofone+Bar%C3%ADtono+Curvo" alt="Saxofone Barítono Curvo" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Saxofone Barítono Curvo</h3>
+                            <p class="description">Design compacto para um sax barítono, com som encorpado.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 32.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="view-all-container">
+                <a href="saxofones.html" class="btn-view-all">Ver Todos os Saxofones <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Bach Musicale</h3>
+                <p>Onde a excelência ressoa em cada nota.</p>
+            </div>
+
+            <nav class="footer-nav">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cordas.html">Produtos</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone-alt"></i> (11) 1234-5678</p>
+                <p><i class="fas fa-envelope"></i> atendimento@bachmusicale.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rua da Harmonia, 100 - São Paulo, SP</p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Conecte-se</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube" class="youtube-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Spotify" class="spotify-icon"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Bach Musicale. Todos os direitos reservados. Design por [Seu Nome/Agência]</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchToggle = document.getElementById('search-toggle');
+            const searchOverlay = document.getElementById('search-overlay');
+            const closeSearch = document.querySelector('.close-search');
+
+            searchToggle.addEventListener('click', () => {
+                searchOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    document.querySelector('.search-input').focus();
+                }, 400);
+            });
+
+            closeSearch.addEventListener('click', () => {
+                searchOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            searchOverlay.addEventListener('click', (event) => {
+                if (event.target === searchOverlay) {
+                    searchOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            document.querySelectorAll('.has-submenu').forEach(item => {
+                const submenuLink = item.querySelector('a');
+                submenuLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1024 || !matchMedia('(hover: hover)').matches) {
+                        e.preventDefault();
+                        item.classList.toggle('active-submenu');
+                    }
+                });
+
+                if (window.innerWidth <= 1024 || !matchMedia('(hover: hover)').matches) {
+                    item.addEventListener('click', (e) => {
+                        document.querySelectorAll('.has-submenu.active-submenu').forEach(openItem => {
+                            if (openItem !== item && !openItem.contains(e.target)) {
+                                openItem.classList.remove('active-submenu');
+                            }
+                        });
+                    });
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                document.querySelectorAll('.has-submenu.active-submenu').forEach(item => {
+                    if (!item.contains(e.target)) {
+                        item.classList.remove('active-submenu');
+                    }
+                });
+            });
+
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+
+            // --- Carousel Functionality (Looping JS) ---
+            document.querySelectorAll('.carousel-container').forEach(container => {
+                const carousel = container.querySelector('.products-carousel');
+                const prevBtn = container.querySelector('.carousel-arrow.prev');
+                const nextBtn = container.querySelector('.carousel-arrow.next');
+
+                const initialCards = Array.from(carousel.children);
+                const numCards = initialCards.length;
+                const cardsToClone = 4; // Quantidade de cards para clonar de cada lado para o loop
+
+                // Clonar e adicionar no início e no fim
+                for (let i = 0; i < cardsToClone; i++) {
+                    const cloneEnd = initialCards[i].cloneNode(true);
+                    carousel.appendChild(cloneEnd);
+                    const cloneStart = initialCards[numCards - 1 - i].cloneNode(true);
+                    carousel.prepend(cloneStart);
+                }
+
+                let currentPosition = cardsToClone; // Começa na primeira "posição real"
+                let isTransitioning = false; // Flag para evitar cliques rápidos durante a transição
+
+                // Calcular largura do card + gap
+                const style = getComputedStyle(carousel);
+                const gap = parseFloat(style.gap);
+                let cardWidth = 0; // Inicializar com 0, será calculado após o layout
+                const cardsPerView = 4; // Mostrar 4 produtos por vez
+
+                const updateDimensions = () => {
+                    if (carousel.children.length > 0) {
+                        cardWidth = carousel.children[cardsToClone].offsetWidth + gap;
+                        carousel.scrollLeft = cardWidth * currentPosition; // Ajusta a posição inicial
+                    }
+                };
+
+                // Chamar no carregamento e redimensionamento
+                window.addEventListener('resize', updateDimensions);
+                updateDimensions(); // Chamar uma vez no carregamento inicial
+
+                // Função para mover o carrossel
+                const moveCarousel = (direction) => {
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+
+                    currentPosition += direction * cardsPerView; // Move pelo número de cards por vez
+
+                    carousel.scrollTo({
+                        left: cardWidth * currentPosition,
+                        behavior: 'smooth'
+                    });
+                };
+
+                nextBtn.addEventListener('click', () => moveCarousel(1));
+                prevBtn.addEventListener('click', () => moveCarousel(-1));
+
+                // Lógica de loop quando a transição termina
+                carousel.addEventListener('scrollend', () => { // Usar 'scrollend' para JS moderno, ou timeout para compatibilidade
+                    isTransitioning = false;
+
+                    const totalRealCards = numCards;
+                    // const totalVisibleCards = carousel.children.length; // incluindo clones
+
+                    // Se rolou para os clones finais (além dos reais)
+                    if (currentPosition >= totalRealCards + cardsToClone) {
+                        currentPosition = cardsToClone + (currentPosition - (totalRealCards + cardsToClone)); // Calcula a posição real correspondente
+                        carousel.scrollTo({
+                            left: cardWidth * currentPosition,
+                            behavior: 'auto' // Sem smooth scroll para o salto
+                        });
+                    }
+                    // Se rolou para os clones iniciais (antes dos reais)
+                    else if (currentPosition < cardsToClone) {
+                        currentPosition = totalRealCards + currentPosition; // Calcula a posição real correspondente
+                        carousel.scrollTo({
+                            left: cardWidth * currentPosition,
+                            behavior: 'auto' // Sem smooth scroll para o salto
+                        });
+                    }
+                    // No carrossel em loop, as setas geralmente ficam sempre visíveis,
+                    // pois sempre há "mais" para onde rolar.
+                    // Não precisamos de updateArrowVisibility aqui, pois as setas estão sempre visíveis.
+                });
+
+                // Fallback para 'scrollend' em navegadores que não suportam (como Firefox antigo)
+                let scrollTimeout;
+                carousel.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const tolerance = 5;
+                        const scrollLeft = carousel.scrollLeft;
+
+                        // Se rolou para o final dos clones do início
+                        if (scrollLeft <= tolerance && currentPosition > cardsToClone) {
+                            currentPosition = numCards + currentPosition; // Ajusta a posição para o final real
+                            carousel.scrollTo({ left: cardWidth * currentPosition, behavior: 'auto' });
+                        }
+                        // Se rolou para o início dos clones do final
+                        else if (scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - tolerance) && currentPosition < numCards + cardsToClone - 1) {
+                            currentPosition = cardsToClone; // Ajusta para o início real
+                            carousel.scrollTo({ left: cardWidth * currentPosition, behavior: 'auto' });
+                        }
+                    }, 100); // Pequeno delay para garantir que o scroll terminou
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

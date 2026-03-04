@@ -1,0 +1,399 @@
+/* Importar variáveis e estilos base do styleHome.css (se não estiver já no HTML) */
+/* Se você incluiu styleHome.css no HTML de cordas.html, não precisa importar aqui. */
+
+:root {
+    /* Replicar variáveis de cores e fontes para este CSS, se não estiver importando styleHome.css como base */
+    /* Exemplo: */
+    --color-primary: #C7AA8D;
+    --color-primary-dark: #A98E70;
+    --color-text-dark: #2C2C2C;
+    --color-text-medium: #6C6C6C;
+    --color-bg-light: #FBF8F5;
+    --color-bg-medium: #F0EDE9;
+    --color-white: #FFFFFF;
+    --color-footer-bg: #1A1A1A;
+    --color-discount: #CC4444;
+    --color-star: #FFD700;
+
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --shadow-subtle: 0 5px 20px rgba(0, 0, 0, 0.08);
+    --shadow-elevated: 0 10px 35px rgba(0, 0, 0, 0.15);
+
+    --transition-ease: all 0.3s ease-in-out;
+}
+
+/* --- Category Hero Section --- */
+.category-hero {
+    position: relative;
+    background-image: url('72c8281ce33548b7bf0df8668d330b1f.jpg'); /* Use a imagem que você subiu para ser o destaque */
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    animation: heroBackgroundZoom 20s infinite alternate ease-in-out; /* Mantenha a animação sutil */
+}
+
+/* Replicar keyframes se não estiver importando styleHome.css */
+@keyframes heroBackgroundZoom {
+    0% { background-size: 100% 100%; }
+    100% { background-size: 110% 110%; }
+}
+
+.category-hero-overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-hero-content {
+    color: var(--color-white);
+    max-width: 800px;
+    padding: 0 2rem;
+    animation: fadeInUp 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.category-hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-white);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.category-hero-content p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* --- Category Sections (Violino, Violão, etc.) --- */
+.category-section {
+    padding: 6rem 3rem;
+    max-width: 100%; /* Ajuste para que o carrossel possa ter largura total */
+    margin: 0 auto;
+    overflow: hidden; /* Importante para carrossel */
+}
+
+/* Alterna a cor de fundo das seções para diferenciar melhor */
+.category-section:nth-child(odd) {
+    background-color: var(--color-bg-light);
+}
+
+.category-section:nth-child(even) {
+    background-color: var(--color-bg-medium);
+}
+
+.category-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 1rem; /* Menos margem para aproximar da descrição */
+    text-align: center;
+    color: var(--color-text-dark);
+    position: relative;
+    letter-spacing: 0.05em;
+    padding-bottom: 0.5rem; /* Adiciona padding para a linha não ficar colada */
+}
+
+.category-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px; /* Borda um pouco mais espessa */
+    background-color: var(--color-primary);
+    margin: 15px auto 0;
+    opacity: 0.9; /* Mais visível */
+}
+
+.category-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3.5rem; /* Ajusta a margem inferior */
+    font-size: 1.1rem;
+    color: var(--color-text-medium);
+    line-height: 1.8;
+}
+
+/* --- Carousel Specific Styles --- */
+.carousel-container {
+    position: relative;
+    padding: 0 4rem; /* Espaço para as setas laterais */
+    margin: 0 -3rem; /* Compensar o padding da section e ter largura total */
+    /* Remove a sombra do container principal */
+}
+
+.products-carousel {
+    display: flex;
+    overflow-x: scroll; /* Habilita a rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Para rolagem suave e "travamento" nos cards */
+    -webkit-overflow-scrolling: touch; /* Melhor rolagem em iOS */
+    padding: 1.5rem 0; /* Padding vertical para os cards dentro do carousel */
+    gap: 32px; /* Espaço entre os cards no carrossel (ajustado no JS) */
+    scrollbar-width: none; /* Esconde a barra de rolagem para Firefox */
+    -ms-overflow-style: none; /* Esconde a barra de rolagem para IE/Edge */
+}
+
+/* Esconde a barra de rolagem para Webkit (Chrome, Safari) */
+.products-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card {
+    flex-shrink: 0; /* Impede que os cards diminuam para caber no container */
+    width: 320px; /* Largura fixa para cada card no carrossel */
+    scroll-snap-align: start; /* Faz o scroll "travar" no início de cada card */
+    background-color: var(--color-white);
+    border-radius: 12px; /* Cantos um pouco mais arredondados */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* Sombra mais pronunciada e com blur */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    border: 1px solid rgba(0, 0, 0, 0.08); /* Borda sutil para separar, mas visível */
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.01); /* Mais movimento no hover */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2); /* Sombra ainda mais elevada */
+}
+
+.product-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Altura um pouco ajustada para o carrossel */
+    overflow: hidden;
+    background-color: #FDFDFD; /* Fundo mais claro para a imagem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Pequena linha para separar imagem do info */
+}
+
+.product-image-wrapper img {
+    padding: 0.5rem; /* Ajuste o padding se a imagem estiver cortando */
+    object-fit: contain; /* Mantém a proporção e garante que a imagem caiba */
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9); /* Quase opaco */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borda sutil */
+    border-radius: 50%;
+    width: 50px; /* Maiores */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Ícone maior */
+    color: var(--color-text-dark);
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: var(--shadow-subtle);
+    transition: var(--transition-ease);
+}
+
+.carousel-arrow.prev {
+    left: 0.5rem; /* Mais próximo da borda */
+}
+
+.carousel-arrow.next {
+    right: 0.5rem; /* Mais próximo da borda */
+}
+
+.carousel-arrow:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary-dark);
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-50%) scale(1.05); /* Pequeno zoom no hover */
+}
+
+/* --- "Ver Tudo" Button --- */
+.view-all-container {
+    text-align: center;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background-color: var(--color-text-dark);
+    color: var(--color-white); /* Cor do texto inicial: branco */
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: var(--transition-ease);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    /* Se você quer que a cor do TEXTO mude, a cor inicial do texto precisa ser diferente da cor do hover. */
+    /* Ex: Para que o texto comece escuro e fique branco no hover: */
+    /* color: var(--color-text-dark); */
+    /* background-color: var(--color-white); ou transparent */
+}
+
+.btn-view-all:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white); /* Cor do texto no hover: branco */
+    box-shadow: 0 8px 25px rgba(199, 170, 141, 0.5);
+    transform: translateY(-3px);
+}
+
+/* --- Media Queries (Ajustes para responsividade) --- */
+@media (max-width: 1200px) {
+    .category-hero-content h1 {
+        font-size: 3.8rem;
+    }
+    .category-hero-content p {
+        font-size: 1.1rem;
+    }
+    .category-section {
+        padding: 5rem 2.5rem;
+    }
+    .category-title {
+        font-size: 2.5rem;
+    }
+    .carousel-container {
+        padding: 0 3rem;
+        margin: 0 -2.5rem; /* Ajustar margem negativa para compensar padding da section */
+    }
+    .product-card {
+        width: 300px;
+    }
+}
+
+@media (max-width: 900px) { /* Novo breakpoint para tablets */
+    .carousel-container {
+        padding: 0 2rem;
+        margin: 0 -2rem;
+    }
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .product-card {
+        width: 280px; /* Reduzir largura do card */
+    }
+    .product-info h3 {
+        font-size: 1.3rem;
+    }
+    .current-price {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-hero {
+        height: 40vh;
+    }
+    .category-hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .category-hero-content p {
+        font-size: 1rem;
+    }
+    .category-section {
+        padding: 4rem 1.5rem;
+    }
+    .category-title {
+        font-size: 2rem;
+    }
+    .category-description {
+        font-size: 0.95rem;
+        margin-bottom: 2.5rem;
+    }
+    .category-title::after {
+        width: 40px;
+    }
+    /* Carousel no Mobile */
+    .carousel-container {
+        padding: 0 1rem; /* Menos padding para as setas ficarem mais próximas da borda */
+        margin: 0 -1.5rem; /* Ajustar margem negativa */
+    }
+    .products-carousel {
+        padding: 1rem 0; /* Menos padding vertical */
+        gap: 20px; /* Espaço menor entre os cards */
+    }
+    .product-card {
+        width: 250px; /* Largura ainda menor no mobile para mais cards visíveis */
+        margin-right: 0; /* Garante que o gap funcione */
+        border-radius: 8px; /* Cantos um pouco menos arredondados para economia de espaço */
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    .product-info {
+        padding: 1.2rem; /* Menos padding interno no card */
+    }
+    .btn-view-all {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+    }
+    .carousel-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        left: 0; /* Colar nas bordas */
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-hero {
+        height: 30vh;
+    }
+    .category-hero-content h1 {
+        font-size: 2rem;
+    }
+    .category-hero-content p {
+        font-size: 0.85rem;
+    }
+    .category-section {
+        padding: 2.5rem 0.5rem;
+    }
+    .category-title {
+        font-size: 1.8rem;
+    }
+    .carousel-container {
+        padding: 0 0.5rem;
+        margin: 0 -0.5rem;
+    }
+    .product-card {
+        width: 220px; /* Cards menores em telas muito pequenas */
+    }
+    .product-info h3 {
+        font-size: 1.1rem;
+    }
+    .current-price {
+        font-size: 1.2rem;
+    }
+    .btn-product-details {
+        font-size: 0.8rem;
+        padding: 0.7rem 1.5rem;
+    }
+    .btn-view-all {
+        font-size: 0.85rem;
+        padding: 0.75rem 1.8rem;
+    }
+}
+
+/* Keyframes (se não estiverem em styleHome.css e você não está importando ele) */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}

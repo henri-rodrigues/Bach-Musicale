@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bach Musicale | Coleção de Teclas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="teclas.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a href="home.html" class="logo">Bach Musicale</a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item has-submenu">
+                        <a href="cordas.html">Cordas <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="cordas.html#violino">Violino</a></li>
+                            <li><a href="cordas.html#violao">Violão</a></li>
+                            <li><a href="cordas.html#guitarra">Guitarra</a></li>
+                            <li><a href="cordas.html#baixo">Baixo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="madeiras.html">Madeira <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="madeiras.html#flauta">Flauta</a></li>
+                            <li><a href="madeiras.html#clarinete">Clarinete</a></li>
+                            <li><a href="madeiras.html#oboe">Oboé</a></li>
+                            <li><a href="madeiras.html#sax">Saxofone</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="metais.html">Metais <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="metais.html#trompete">Trompete</a></li>
+                            <li><a href="metais.html#trombone">Trombone</a></li>
+                            <li><a href="metais.html#tuba">Tuba</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="teclas.html">Teclas <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="teclas.html#piano">Piano</a></li>
+                            <li><a href="teclas.html#teclado">Teclado</a></li>
+                            <li><a href="teclas.html#orgao">Órgão</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="search-toggle" aria-label="Abrir busca"><i class="fas fa-search"></i></button>
+                <a href="#" class="cart-icon" aria-label="Carrinho de compras"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="account-icon" aria-label="Minha conta"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+        <div class="search-overlay" id="search-overlay">
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="Buscar instrumentos..." class="search-input" />
+                <button class="close-search" aria-label="Fechar busca"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-hero">
+            <div class="category-hero-overlay">
+                <div class="category-hero-content">
+                    <h1>Coleção de Teclas</h1>
+                    <p>Mergulhe no universo da harmonia e melodia com nossos instrumentos de teclado. De pianos clássicos a teclados modernos, a música está ao seu alcance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="piano" class="category-section">
+            <h2 class="category-title">Pianos</h2>
+            <div class="category-description">
+                <p>Nossa seleção de pianos oferece desde modelos de cauda majestosos até pianos digitais versáteis, com sonoridade rica e toque responsivo.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="products-carousel">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/1C2833/fff?text=Piano+Cauda+Concert" alt="Piano de Cauda de Concerto" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Piano de Cauda de Concerto</h3>
+                            <p class="description">Timbre profundo e poderoso, para grandes palcos e estúdios.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 150.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/2C3E50/fff?text=Piano+Vertical" alt="Piano Vertical Clássico" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Piano Vertical Clássico</h3>
+                            <p class="description">Ideal para estudos e salas de estar, com toque sensível e sonoridade rica.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 28.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/34495E/fff?text=Piano+Digital+Premium" alt="Piano Digital Premium" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Piano Digital Premium</h3>
+                            <p class="description">Som autêntico de piano acústico com recursos digitais modernos.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 12.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/4A6572/fff?text=Piano+Cauda+Estudo" alt="Piano de Cauda de Estudo" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Piano de Cauda para Estudo</h3>
+                            <p class="description">Qualidade de cauda em um formato mais acessível para estudantes avançados.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 75.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/5E81AC/fff?text=Piano+Digital+Compacto" alt="Piano Digital Compacto" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Piano Digital Compacto</h3>
+                            <p class="description">Leve, com bom som e toque, ideal para espaços menores.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 6.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/84A59D/fff?text=Piano+H%C3%ADbrido" alt="Piano Híbrido" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Piano Híbrido Acústico/Digital</h3>
+                            <p class="description">O melhor dos dois mundos: toque de piano acústico com recursos digitais.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 45.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/C0C999/333?text=Piano+Digital+Port%C3%A1til" alt="Piano Digital Portátil" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Piano Digital Portátil</h3>
+                            <p class="description">Leveza e versatilidade para músicos em movimento, com bateria opcional.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 3.800,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/DDE0B8/333?text=Piano+Baby+Grand" alt="Piano Baby Grand" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Piano Baby Grand</h3>
+                            <p class="description">O charme de um piano de cauda em um tamanho reduzido, ideal para espaços menores.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 95.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="view-all-container">
+                <a href="pianos.html" class="btn-view-all">Ver Todos os Pianos <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="teclado" class="category-section">
+            <h2 class="category-title">Teclados</h2>
+            <div class="category-description">
+                <p>Nossa linha de teclados oferece desde modelos de estudo até estações de trabalho profissionais. Explore timbres e ritmos para cada gênero musical.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="products-carousel">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/2F4F4F/fff?text=Teclado+Arranjador" alt="Teclado Arranjador Profissional" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Teclado Arranjador Profissional</h3>
+                            <p class="description">Centenas de sons e ritmos para composição e performance ao vivo.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 7.200,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/4F6272/fff?text=Teclado+Estudante" alt="Teclado Estudante 61 Teclas" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Teclado Estudante 61 Teclas</h3>
+                            <p class="description">Leve e com funções didáticas, perfeito para o primeiro contato musical.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 950,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/6C757D/fff?text=Controlador+MIDI" alt="Controlador MIDI 88 Teclas" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Controlador MIDI 88 Teclas</h3>
+                            <p class="description">Controle total de seus softwares e instrumentos virtuais.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 2.800,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/869399/fff?text=Sintetizador+Analogico" alt="Sintetizador Analógico" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Sintetizador Analógico Polifônico</h3>
+                            <p class="description">Sons ricos e quentes, com infinitas possibilidades de design sonoro.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 5.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/A0A0A0/333?text=Workstation+Musical" alt="Workstation Musical" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Workstation Musical Completa</h3>
+                            <p class="description">Sequenciador, sampler, e vasta biblioteca de sons para produção.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 9.800,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/B2B2B2/333?text=Teclado+Digital+Leve" alt="Teclado Digital Leve" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Teclado Digital para Palco</h3>
+                            <p class="description">Leve, com sons de piano e órgão de alta qualidade, otimizado para shows.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 4.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/C8C8C8/333?text=Teclado+Portatil+Infantil" alt="Teclado Portátil Infantil" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Teclado Portátil Infantil</h3>
+                            <p class="description">Introdução divertida ao mundo da música para crianças.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 300,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/DCDCDC/333?text=Keytar+Performance" alt="Keytar de Performance" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Keytar de Performance</h3>
+                            <p class="description">Liberdade de movimento e expressão no palco, com sons potentes.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 2.100,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="view-all-container">
+                <a href="teclados.html" class="btn-view-all">Ver Todos os Teclados <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section id="orgao" class="category-section">
+            <h2 class="category-title">Órgãos</h2>
+            <div class="category-description">
+                <p>A imponência e a riqueza sonora dos órgãos. De modelos clássicos a eletrônicos, para igrejas, estúdios ou performances de jazz.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="products-carousel">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/36454F/fff?text=Orgao+Lit%C3%BArgico" alt="Órgão Litúrgico Digital" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Órgão Litúrgico Digital</h3>
+                            <p class="description">Sons autênticos de órgão de tubos, com versatilidade moderna.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 45.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/4F6272/fff?text=Orgao+Hammond+Clone" alt="Órgão Hammond Clone" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Órgão Hammond Clone Portátil</h3>
+                            <p class="description">Recriação fiel do clássico Hammond B3 para palco e estúdio.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 18.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/6C757D/fff?text=Orgao+Digital+Home" alt="Órgão Digital para Casa" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Órgão Digital para Uso Doméstico</h3>
+                            <p class="description">Compacto e versátil, com diversos timbres para o estudo e lazer.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 9.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/869399/fff?text=Orgao+Portatil+Jazz" alt="Órgão Portátil Jazz" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Órgão Portátil para Jazz/Blues</h3>
+                            <p class="description">Simulação de alto nível de rotary speaker e drawbars para expressividade.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 14.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/A0A0A0/333?text=Orgao+Antigo+Restaura%C3%A7%C3%A3o" alt="Órgão Antigo Restauração" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Órgão de Harmônio Antigo (Restaurado)</h3>
+                            <p class="description">Peça de colecionador, restaurada à sua glória original com som clássico.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 25.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/B2B2B2/333?text=Orgao+Virtual" alt="Órgão Virtual Controller" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Controlador para Órgão Virtual</h3>
+                            <p class="description">Hardware dedicado para controle de softwares de órgão, com drawbars físicos.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 3.500,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/C8C8C8/333?text=Orgao+Pedaleira" alt="Órgão com Pedaleira" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Órgão Digital com Pedaleira</h3>
+                            <p class="description">Experiência completa de órgão, incluindo pedaleira para baixo.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 22.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/400x300/DCDCDC/333?text=Orgao+Eletrico+Vintage" alt="Órgão Elétrico Vintage" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Órgão Elétrico Vintage (Recondicionado)</h3>
+                            <p class="description">Sonoridade autêntica dos anos 60 e 70, com o charme do passado.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ 16.000,00</span>
+                            </div>
+                            <a href="produto.html" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="view-all-container">
+                <a href="orgaos.html" class="btn-view-all">Ver Todos os Órgãos <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Bach Musicale</h3>
+                <p>Onde a excelência ressoa em cada nota.</p>
+            </div>
+
+            <nav class="footer-nav">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cordas.html">Produtos</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone-alt"></i> (11) 1234-5678</p>
+                <p><i class="fas fa-envelope"></i> atendimento@bachmusicale.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rua da Harmonia, 100 - São Paulo, SP</p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Conecte-se</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube" class="youtube-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Spotify" class="spotify-icon"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Bach Musicale. Todos os direitos reservados. Design por [Seu Nome/Agência]</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchToggle = document.getElementById('search-toggle');
+            const searchOverlay = document.getElementById('search-overlay');
+            const closeSearch = document.querySelector('.close-search');
+
+            searchToggle.addEventListener('click', () => {
+                searchOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    document.querySelector('.search-input').focus();
+                }, 400);
+            });
+
+            closeSearch.addEventListener('click', () => {
+                searchOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            searchOverlay.addEventListener('click', (event) => {
+                if (event.target === searchOverlay) {
+                    searchOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            document.querySelectorAll('.has-submenu').forEach(item => {
+                const submenuLink = item.querySelector('a');
+                submenuLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1024 || !matchMedia('(hover: hover)').matches) {
+                        e.preventDefault();
+                        item.classList.toggle('active-submenu');
+                    }
+                });
+
+                if (window.innerWidth <= 1024 || !matchMedia('(hover: hover)').matches) {
+                    item.addEventListener('click', (e) => {
+                        document.querySelectorAll('.has-submenu.active-submenu').forEach(openItem => {
+                            if (openItem !== item && !openItem.contains(e.target)) {
+                                openItem.classList.remove('active-submenu');
+                            }
+                        });
+                    });
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                document.querySelectorAll('.has-submenu.active-submenu').forEach(item => {
+                    if (!item.contains(e.target)) {
+                        item.classList.remove('active-submenu');
+                    }
+                });
+            });
+
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+
+            // --- Carousel Functionality (Looping JS) ---
+            document.querySelectorAll('.carousel-container').forEach(container => {
+                const carousel = container.querySelector('.products-carousel');
+                const prevBtn = container.querySelector('.carousel-arrow.prev');
+                const nextBtn = container.querySelector('.carousel-arrow.next');
+
+                const initialCards = Array.from(carousel.children);
+                const numCards = initialCards.length;
+                const cardsToClone = 4; // Quantidade de cards para clonar de cada lado para o loop
+
+                // Clonar e adicionar no início e no fim
+                for (let i = 0; i < cardsToClone; i++) {
+                    const cloneEnd = initialCards[i].cloneNode(true);
+                    carousel.appendChild(cloneEnd);
+                    const cloneStart = initialCards[numCards - 1 - i].cloneNode(true);
+                    carousel.prepend(cloneStart);
+                }
+
+                let currentPosition = cardsToClone; // Começa na primeira "posição real"
+                let isTransitioning = false; // Flag para evitar cliques rápidos durante a transição
+
+                // Calcular largura do card + gap
+                const style = getComputedStyle(carousel);
+                const gap = parseFloat(style.gap);
+                let cardWidth = 0; // Inicializar com 0, será calculado após o layout
+                const cardsPerView = 4; // Mostrar 4 produtos por vez
+
+                const updateDimensions = () => {
+                    if (carousel.children.length > 0) {
+                        cardWidth = carousel.children[cardsToClone].offsetWidth + gap;
+                        carousel.scrollLeft = cardWidth * currentPosition; // Ajusta a posição inicial
+                    }
+                };
+
+                // Chamar no carregamento e redimensionamento
+                window.addEventListener('resize', updateDimensions);
+                updateDimensions(); // Chamar uma vez no carregamento inicial
+
+                // Função para mover o carrossel
+                const moveCarousel = (direction) => {
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+
+                    currentPosition += direction * cardsPerView; // Move pelo número de cards por vez
+
+                    carousel.scrollTo({
+                        left: cardWidth * currentPosition,
+                        behavior: 'smooth'
+                    });
+                };
+
+                nextBtn.addEventListener('click', () => moveCarousel(1));
+                prevBtn.addEventListener('click', () => moveCarousel(-1));
+
+                // Lógica de loop quando a transição termina
+                carousel.addEventListener('scrollend', () => { // Usar 'scrollend' para JS moderno, ou timeout para compatibilidade
+                    isTransitioning = false;
+
+                    const totalRealCards = numCards;
+                    // const totalVisibleCards = carousel.children.length; // incluindo clones
+
+                    // Se rolou para os clones finais (além dos reais)
+                    if (currentPosition >= totalRealCards + cardsToClone) {
+                        currentPosition = cardsToClone + (currentPosition - (totalRealCards + cardsToClone)); // Calcula a posição real correspondente
+                        carousel.scrollTo({
+                            left: cardWidth * currentPosition,
+                            behavior: 'auto' // Sem smooth scroll para o salto
+                        });
+                    }
+                    // Se rolou para os clones iniciais (antes dos reais)
+                    else if (currentPosition < cardsToClone) {
+                        currentPosition = totalRealCards + currentPosition; // Calcula a posição real correspondente
+                        carousel.scrollTo({
+                            left: cardWidth * currentPosition,
+                            behavior: 'auto' // Sem smooth scroll para o salto
+                        });
+                    }
+                });
+
+                // Fallback para 'scrollend' em navegadores que não suportam (como Firefox antigo)
+                let scrollTimeout;
+                carousel.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const tolerance = 5;
+                        const scrollLeft = carousel.scrollLeft;
+
+                        // Se rolou para o final dos clones do início
+                        if (scrollLeft <= tolerance && currentPosition > cardsToClone) {
+                            currentPosition = numCards + currentPosition; // Ajusta a posição para o final real
+                            carousel.scrollTo({ left: cardWidth * currentPosition, behavior: 'auto' });
+                        }
+                        // Se rolou para o início dos clones do final
+                        else if (scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - tolerance) && currentPosition < numCards + cardsToClone - 1) {
+                            currentPosition = cardsToClone; // Ajusta para o início real
+                            carousel.scrollTo({ left: cardWidth * currentPosition, behavior: 'auto' });
+                        }
+                    }, 100); // Pequeno delay para garantir que o scroll terminou
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bach Musicale | Violinos</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="lista_de_produtos.css" />
+</head>
+
+<body>
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a href="home.html" class="logo">Bach Musicale</a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item has-submenu">
+                        <a href="cordas.html">Cordas <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="cordas.html#violino">Violino</a></li>
+                            <li><a href="cordas.html#violao">Violão</a></li>
+                            <li><a href="cordas.html#guitarra">Guitarra</a></li>
+                            <li><a href="cordas.html#baixo">Baixo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="madeiras.html">Madeira <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="madeiras.html#flauta">Flauta</a></li>
+                            <li><a href="madeiras.html#clarinete">Clarinete</a></li>
+                            <li><a href="madeiras.html#oboe">Oboé</a></li>
+                            <li><a href="madeiras.html#sax">Saxofone</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="metais.html">Metais <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="metais.html#trompete">Trompete</a></li>
+                            <li><a href="metais.html#trombone">Trombone</a></li>
+                            <li><a href="metais.html#tuba">Tuba</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="teclas.html">Teclas <i class="fas fa-chevron-down nav-arrow"></i></a>
+                        <ul class="submenu">
+                            <li><a href="teclas.html#piano">Piano</a></li>
+                            <li><a href="teclas.html#teclado">Teclado</a></li>
+                            <li><a href="teclas.html#orgao">Órgão</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="search-toggle" aria-label="Abrir busca"><i class="fas fa-search"></i></button>
+                <a href="#" class="cart-icon" aria-label="Carrinho de compras"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="account-icon" aria-label="Minha conta"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+        <div class="search-overlay" id="search-overlay">
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="Buscar instrumentos..." class="search-input" />
+                <button class="close-search" aria-label="Fechar busca"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="violinos-page">
+
+        <section class="products-grid-section">
+            <div class="container">
+                <h2 class="section-title">Nossos Baixos</h2>
+                <div class="filter-sort-bar">
+                    <div class="filter-options">
+                        <label for="brand-filter">Marca:</label>
+                        <select id="brand-filter">
+                            <option value="">Todas</option>
+                            <option value="stradivarius">Stradivarius</option>
+                            <option value="guarneri">Guarneri</option>
+                            <option value="yamaha">Yamaha</option>
+                            <option value="gamba">Gamba</option>
+                        </select>
+                    </div>
+                    <div class="sort-options">
+                        <label for="sort-by">Ordenar por:</label>
+                        <select id="sort-by">
+                            <option value="price-asc">Preço: Menor para Maior</option>
+                            <option value="price-desc">Preço: Maior para Menor</option>
+                            <option value="name-asc">Nome: A-Z</option>
+                            <option value="name-desc">Nome: Z-A</option>
+                            <option value="rating-desc">Avaliação: Maior para Menor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="violins-grid">
+                </div>
+
+                <div class="pagination" id="violins-pagination">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Bach Musicale</h3>
+                <p>Onde a excelência ressoa em cada nota.</p>
+            </div>
+
+            <nav class="footer-nav">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="cordas.html">Produtos</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone-alt"></i> (11) 1234-5678</p>
+                <p><i class="fas fa-envelope"></i> atendimento@bachmusicale.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rua da Harmonia, 100 - São Paulo, SP</p>
+            </div>
+
+            <div class="footer-social">
+                <h4>Conecte-se</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube" class="youtube-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Spotify" class="spotify-icon"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Bach Musicale. Todos os direitos reservados. Design por [Seu Nome/Agência]</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Seus dados de violinos (você pode substituir as URLs de imagem por suas imagens reais)
+            // Seus dados de violinos (com imagens reais ou paths corretos)
+            const violins = [
+                {
+                    id: 1,
+                    name: 'Baixo Elétrico Jazz Bass Standard',
+                    description: 'Timbre versátil e punchy, ideal para diversos estilos musicais como funk, rock e jazz. Dois captadores single-coil.',
+                    price: 3500.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 4.6,
+                    brand: 'Fender'
+                },
+                {
+                    id: 2,
+                    name: 'Baixo Elétrico Precision Bass Classic',
+                    description: 'Som encorpado e fundamental, o pilar do rock e blues. Um captador split single-coil potente.',
+                    price: 3800.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4.7,
+                    brand: 'Fender'
+                },
+                {
+                    id: 3,
+                    name: 'Baixo Elétrico 5 Cordas Ativo',
+                    description: 'Extensão de graves com eletrônica ativa para maior controle tonal e pegada moderna. Ideal para pop, gospel e metal.',
+                    price: 4200.00,
+                    imageUrl: 'ad58104166ec49768e50de5d2d00e351.jpg',
+                    rating: 4.5,
+                    brand: 'Sterling by Music Man'
+                },
+                {
+                    id: 4,
+                    name: 'Baixo Acústico Eletroacústico',
+                    description: 'Ideal para sessões unplugged ou como acompanhamento em acústicos. Possui captação para amplificação.',
+                    price: 2800.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4.0,
+                    brand: 'Takamine'
+                },
+                {
+                    id: 5,
+                    name: 'Baixo Elétrico Fretless Jazz Bass',
+                    description: 'Sem trastes para um timbre suave e vocal, ideal para jazz, fusion e blues. Permite slides expressivos.',
+                    price: 4000.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 4.3,
+                    brand: 'Squier'
+                },
+                {
+                    id: 6,
+                    name: 'Baixo Elétrico Short Scale',
+                    description: 'Escala mais curta para maior conforto e tocabilidade, ideal para iniciantes ou músicos com mãos menores.',
+                    price: 1800.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 3.8,
+                    brand: 'Epiphone'
+                },
+                {
+                    id: 7,
+                    name: 'Baixo Elétrico Hollow Body Starfire Bass',
+                    description: 'Corpo semi-acústico com timbre vintage e encorpado, perfeito para blues, rockabilly e classic rock.',
+                    price: 5000.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4.7,
+                    brand: 'Guild'
+                },
+                {
+                    id: 8,
+                    name: 'Baixo Elétrico para Iniciantes Kit',
+                    description: 'Kit completo com baixo, amplificador pequeno, cabo e afinador. Tudo que o iniciante precisa.',
+                    price: 950.00,
+                    imageUrl: 'ad58104166ec49768e50de5d2d00e351.jpg',
+                    rating: 3.5,
+                    brand: 'Tagima'
+                },
+                {
+                    id: 9,
+                    name: 'Baixo Elétrico Custom Shop Masterbuilt',
+                    description: 'Construído artesanalmente com as melhores madeiras e componentes. Sonoridade e acabamento impecáveis.',
+                    price: 12000.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 5,
+                    brand: 'Fender Custom Shop'
+                },
+                {
+                    id: 10,
+                    name: 'Baixo Elétrico 6 Cordas Ibanez SR Series',
+                    description: 'Versatilidade extrema com 6 cordas, ideal para fusion, jazz e solos. Braço fino e confortável.',
+                    price: 4800.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 4.8,
+                    brand: 'Ibanez'
+                },
+                {
+                    id: 11,
+                    name: 'Baixo Elétrico Rickenbacker 4003',
+                    description: 'Design icônico e timbre único, com médios pronunciados e agudos brilhantes. Famoso por seu sustain.',
+                    price: 7000.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 4.9,
+                    brand: 'Rickenbacker'
+                },
+                {
+                    id: 12,
+                    name: 'Baixo Elétrico PJ Bass Configuration',
+                    description: 'Combinação de captadores Precision e Jazz Bass para o melhor dos dois mundos: punch e versatilidade.',
+                    price: 3200.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4.4,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 13,
+                    name: 'Baixo Elétrico StingRay 4 String',
+                    description: 'Timbre ativo potente e pegada forte, com pré-amplificador de 3 bandas. O som clássico do funk e rock.',
+                    price: 5500.00,
+                    imageUrl: 'ad58104166ec49768e50de5d2d00e351.jpg',
+                    rating: 4.8,
+                    brand: 'Music Man'
+                },
+                {
+                    id: 14,
+                    name: 'Baixo Elétrico Thunderbird Bass',
+                    description: 'Design radical e som encorpado, popular entre baixistas de rock e hard rock. Ótima projeção.',
+                    price: 3900.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4.3,
+                    brand: 'Gibson'
+                },
+                {
+                    id: 15,
+                    name: 'Baixo Acústico Fretless',
+                    description: 'Proporciona um timbre acústico suave e deslizes sem trastes, ideal para climas ambientes e solos.',
+                    price: 2500.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 4.1,
+                    brand: 'Warwick'
+                },
+                {
+                    id: 16,
+                    name: 'Baixo Elétrico Schecter Stiletto Studio 5',
+                    description: 'Design moderno e ergonômico, com captação ativa e braço neck-thru para sustain e estabilidade.',
+                    price: 4500.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 4.6,
+                    brand: 'Schecter'
+                },
+                {
+                    id: 17,
+                    name: 'Baixo Elétrico Vintage Series Jazz Bass',
+                    description: 'Reprodução fiel dos Jazz Bass dos anos 60, com captadores e hardware que recriam o timbre clássico.',
+                    price: 6000.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4.8,
+                    brand: 'Fender'
+                },
+                {
+                    id: 18,
+                    name: 'Baixo Elétrico Hofner Violin Bass',
+                    description: 'Modelo icônico popularizado pelos Beatles, com timbre encorpado e visual único. Leve e confortável.',
+                    price: 3000.00,
+                    imageUrl: 'ad58104166ec49768e50de5d2d00e351.jpg',
+                    rating: 4.2,
+                    brand: 'Hofner'
+                },
+                {
+                    id: 19,
+                    name: 'Baixo Elétrico Squier Classic Vibe 70s Precision',
+                    description: 'Excelente custo-benefício com o visual e o timbre clássico do Precision Bass dos anos 70.',
+                    price: 2000.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4.0,
+                    brand: 'Squier'
+                },
+                {
+                    id: 20,
+                    name: 'Baixo Elétrico Spector Euro Series',
+                    description: 'Design esculpido e ergonômico, com captadores ativos EMG e pré-amplificador para timbres poderosos.',
+                    price: 6500.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 4.9,
+                    brand: 'Spector'
+                },
+                {
+                    id: 21,
+                    name: 'Baixo Elétrico Yamaha BB Series',
+                    description: 'Conhecido por sua construção sólida e timbre versátil, adequado para rock, blues e pop.',
+                    price: 2800.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 4.3,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 22,
+                    name: 'Baixo Elétrico Ibanez SR Bass Workshop Multiscale',
+                    description: 'Escala multiescala para otimizar a tensão das cordas e a entonação. Ideal para baixistas modernos.',
+                    price: 5200.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4.8,
+                    brand: 'Ibanez'
+                },
+                {
+                    id: 23,
+                    name: 'Baixo Elétrico Cort Artisan Series',
+                    description: 'Qualidade construtiva e versatilidade sonora. Disponível em várias configurações de captadores.',
+                    price: 3000.00,
+                    imageUrl: 'ad58104166ec49768e50de5d2d00e351.jpg',
+                    rating: 4.4,
+                    brand: 'Cort'
+                },
+                {
+                    id: 24,
+                    name: 'Baixo Elétrico Fretless Ibanez SRF700',
+                    description: 'Design elegante e som fretless articulado, com piezo no cavalete para um timbre mais acústico.',
+                    price: 3600.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4.5,
+                    brand: 'Ibanez'
+                },
+                {
+                    id: 25,
+                    name: 'Baixo Elétrico Warwick RockBass Streamer',
+                    description: 'Design ergonômico e timbre robusto, com caps MEC para uma sonoridade poderosa. Conforto e punch.',
+                    price: 4700.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 4.6,
+                    brand: 'Warwick'
+                },
+                {
+                    id: 26,
+                    name: 'Baixo Elétrico Squier Affinity Precision Bass',
+                    description: 'Ótima porta de entrada para o Precision Bass, com o timbre clássico e confiabilidade Fender.',
+                    price: 1500.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 3.7,
+                    brand: 'Squier'
+                },
+                {
+                    id: 27,
+                    name: 'Baixo Elétrico TRBX Yamaha',
+                    description: 'Design moderno e equilibrado, com eletrônica ativa para versatilidade tonal em palco e estúdio.',
+                    price: 2900.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4.2,
+                    brand: 'Yamaha'
+                },
+                {
+                    id: 28,
+                    name: 'Baixo Elétrico Sire Marcus Miller V7',
+                    description: 'Qualidade de construção e timbre superior para sua faixa de preço, com pré-amplificador ativo versátil.',
+                    price: 2700.00,
+                    imageUrl: 'ad58104166ec49768e50de5d2d00e351.jpg',
+                    rating: 4.6,
+                    brand: 'Sire'
+                },
+                {
+                    id: 29,
+                    name: 'Baixo Elétrico Ernie Ball Music Man Bongo 5 HS',
+                    description: 'Design futurista e som super articulado, com captadores humbucker e single-coil para máxima versatilidade.',
+                    price: 6800.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4.9,
+                    brand: 'Music Man'
+                },
+                {
+                    id: 30,
+                    name: 'Baixo Elétrico Spector Performer Series',
+                    description: 'Versão mais acessível dos aclamados Spector, mantendo o design e grande parte da sonoridade característica.',
+                    price: 3300.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 4.3,
+                    brand: 'Spector'
+                },
+                {
+                    id: 31,
+                    name: 'Baixo Elétrico Gibson EB Bass',
+                    description: 'Design clássico da Gibson com humbuckers potentes para um timbre gordo e sustain. Para rock e blues.',
+                    price: 4300.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 4.5,
+                    brand: 'Gibson'
+                },
+                {
+                    id: 32,
+                    name: 'Baixo Elétrico Godin A4 Ultra Fretless',
+                    description: 'Combina captadores magnéticos e piezo para sons elétricos e acústicos, com um timbre fretless distinto.',
+                    price: 5800.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4.7,
+                    brand: 'Godin'
+                },
+                {
+                    id: 33,
+                    name: 'Baixo Elétrico LTD B-Series 4 String',
+                    description: 'Construção robusta e timbre agressivo, ideal para estilos mais pesados como rock e metal. Design moderno.',
+                    price: 2600.00,
+                    imageUrl: 'ad58104166ec49768e50de5d2d00e351.jpg',
+                    rating: 4.1,
+                    brand: 'ESP LTD'
+                },
+                {
+                    id: 34,
+                    name: 'Baixo Elétrico Sire Marcus Miller P7',
+                    description: 'Versão P-Bass da linha Marcus Miller, com o clássico punch do Precision e a versatilidade do pré-ativo.',
+                    price: 2900.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4.5,
+                    brand: 'Sire'
+                },
+                {
+                    id: 35,
+                    name: 'Baixo Acústico Kala U-Bass',
+                    description: 'Baixo portátil com corpo de ukulele, ótimo para levar a qualquer lugar e ensaiar discretamente.',
+                    price: 1100.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 3.9,
+                    brand: 'Kala'
+                },
+                {
+                    id: 36,
+                    name: 'Baixo Elétrico G&L L-2000',
+                    description: 'Captadores MFD e sistema de chaveamento versátil, permitindo uma vasta gama de timbres. Potência e flexibilidade.',
+                    price: 4900.00,
+                    imageUrl: '72c8281ce33548b7bf0df8668d330b1f.jpg',
+                    rating: 4.7,
+                    brand: 'G&L'
+                },
+                {
+                    id: 37,
+                    name: 'Baixo Elétrico Warwick Corvette Standard',
+                    description: 'Design ergonômico e madeiras selecionadas para um timbre encorpado e sustain notável. Conforto e som.',
+                    price: 5200.00,
+                    imageUrl: '98941f5fc91642d4a8d39185ad5cdde4.jpg',
+                    rating: 4.6,
+                    brand: 'Warwick'
+                },
+                {
+                    id: 38,
+                    name: 'Baixo Elétrico Sadowsky Metro Express',
+                    description: 'Qualidade Sadowsky a um preço mais acessível, com pré-amplificador e timbre moderno e cristalino.',
+                    price: 7500.00,
+                    imageUrl: 'ad58104166ec49768e50de5d2d00e351.jpg',
+                    rating: 4.9,
+                    brand: 'Sadowsky'
+                },
+                {
+                    id: 39,
+                    name: 'Baixo Elétrico Aria Pro II SB-1000',
+                    description: 'Modelo vintage com design único e eletrônica ativa. Som potente e versátil, com muitos fãs.',
+                    price: 3400.00,
+                    imageUrl: 'b418577e19fd4934be8822aa78162c30.jpg',
+                    rating: 4.2,
+                    brand: 'Aria Pro II'
+                },
+                {
+                    id: 40,
+                    name: 'Baixo Elétrico Fodera Emperor 5 Standard',
+                    description: 'Um dos baixos mais cobiçados do mundo, conhecido pela construção impecável e timbre rico e orgânico.',
+                    price: 15000.00,
+                    imageUrl: 'ba6cbcb989cd41ff8d76e331bf7a5793.jpg',
+                    rating: 5,
+                    brand: 'Fodera'
+                }
+            ];
+            const productsPerPage = 8; // Número de produtos por página (para 4 colunas, 2 linhas)
+            let currentPage = 1;
+            let currentFilteredViolins = [...violins]; // Cópia dos violinos para filtrar/ordenar
+
+            const violinsGrid = document.getElementById('violins-grid');
+            const violinsPagination = document.getElementById('violins-pagination');
+            const brandFilter = document.getElementById('brand-filter');
+            const sortBy = document.getElementById('sort-by');
+
+            // Função para renderizar as estrelas de avaliação
+            function renderStars(rating) {
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (rating >= i) {
+                        starsHtml += '<i class="fas fa-star"></i>';
+                    } else if (rating > i - 1 && rating < i) {
+                        starsHtml += '<i class="fas fa-star-half-alt"></i>';
+                    } else {
+                        starsHtml += '<i class="far fa-star"></i>';
+                    }
+                }
+                return starsHtml;
+            }
+
+            // Função para renderizar os produtos no grid
+            function renderProducts() {
+                violinsGrid.innerHTML = ''; // Limpa o grid
+                const startIndex = (currentPage - 1) * productsPerPage;
+                const endIndex = startIndex + productsPerPage;
+                const productsToDisplay = currentFilteredViolins.slice(startIndex, endIndex);
+
+                productsToDisplay.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.classList.add('product-card');
+                    // Adiciona atributos de dados para facilitar filtragem/ordenação no futuro
+                    productCard.setAttribute('data-brand', product.brand.toLowerCase());
+                    productCard.setAttribute('data-price', product.price);
+                    productCard.setAttribute('data-name', product.name.toLowerCase());
+                    productCard.setAttribute('data-rating', product.rating);
+
+                    productCard.innerHTML = `
+                        <div class="product-image-wrapper">
+                            <img src="${product.imageUrl}" alt="${product.name}" />
+                        </div>
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <p class="description">${product.description}</p>
+                            <div class="rating">
+                                ${renderStars(product.rating)}
+                            </div>
+                            <div class="price">
+                                <span class="current-price">R$ ${product.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                            </div>
+                            <a href="produto.html?id=${product.id}" class="btn-product-details">Ver Detalhes</a>
+                        </div>
+                    `;
+                    violinsGrid.appendChild(productCard);
+                });
+            }
+
+            // Função para renderizar os links da paginação
+            function renderPagination() {
+                violinsPagination.innerHTML = ''; // Limpa a paginação
+                const totalPages = Math.ceil(currentFilteredViolins.length / productsPerPage);
+                console.log('--- Renderizando Paginação ---');
+                console.log('Total de Violinos Filtrados:', currentFilteredViolins.length);
+                console.log('Total de Páginas:', totalPages);
+                console.log('Página Atual:', currentPage);
+
+                // Botão "Anterior"
+                if (currentPage > 1) {
+                    const prevLink = document.createElement('a');
+                    prevLink.href = '#';
+                    prevLink.classList.add('page-link');
+                    prevLink.textContent = '« Anterior';
+                    prevLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        currentPage--;
+                        console.log('Clicou em Anterior. Nova Página Atual:', currentPage);
+                        applyFiltersAndSort(); // Re-aplicar para manter filtros/ordenar ao mudar de página
+                        window.scrollTo({ top: 0, behavior: 'smooth' }); // Volta para o topo da página
+                    });
+                    violinsPagination.appendChild(prevLink);
+                }
+
+                // Números das páginas
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageLink = document.createElement('a');
+                    pageLink.href = '#';
+                    pageLink.classList.add('page-link');
+                    if (i === currentPage) {
+                        pageLink.classList.add('active');
+                    }
+                    pageLink.textContent = i;
+                    pageLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        currentPage = i;
+                        console.log('Clicou na página ' + i + '. Nova Página Atual:', currentPage);
+                        applyFiltersAndSort(); // Re-aplicar para manter filtros/ordenar ao mudar de página
+                        window.scrollTo({ top: 0, behavior: 'smooth' }); // Volta para o topo da página
+                    });
+                    violinsPagination.appendChild(pageLink);
+                }
+
+                // Botão "Próximo"
+                if (currentPage < totalPages) {
+                    const nextLink = document.createElement('a');
+                    nextLink.href = '#';
+                    nextLink.classList.add('page-link');
+                    nextLink.textContent = 'Próximo »';
+                    nextLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        currentPage++;
+                        console.log('Clicou em Próximo. Nova Página Atual:', currentPage);
+                        applyFiltersAndSort(); // Re-aplicar para manter filtros/ordenar ao mudar de página
+                        window.scrollTo({ top: 0, behavior: 'smooth' }); // Volta para o topo da página
+                    });
+                    violinsPagination.appendChild(nextLink);
+                }
+            }
+
+            // Função para aplicar filtros e ordenação
+            function applyFiltersAndSort() {
+                console.log('*** Executando applyFiltersAndSort ***');
+                // Filtra os produtos
+                const selectedBrand = brandFilter.value.toLowerCase();
+                if (selectedBrand === '') {
+                    currentFilteredViolins = [...violins]; // Se nada selecionado, usa todos os produtos
+                } else {
+                    currentFilteredViolins = violins.filter(product => product.brand.toLowerCase() === selectedBrand);
+                }
+                console.log('Violinos após filtro (Marca: ' + selectedBrand + '):', currentFilteredViolins.length);
+
+                // Ordena os produtos
+                const sortMethod = sortBy.value;
+                currentFilteredViolins.sort((a, b) => {
+                    switch (sortMethod) {
+                        case 'price-asc': return a.price - b.price;
+                        case 'price-desc': return b.price - a.price;
+                        case 'name-asc': return a.name.localeCompare(b.name);
+                        case 'name-desc': return b.name.localeCompare(a.name);
+                        case 'rating-desc': return b.rating - a.rating;
+                        default: return 0;
+                    }
+                });
+                console.log('Violinos após ordenação (Método: ' + sortMethod + '):', currentFilteredViolins.length);
+
+                // currentPage = 1; // Remova ou comente esta linha temporariamente para testar a navegação
+                // Se você a mantiver, ela sempre voltará para a página 1 após qualquer filtro/ordenação/clique.
+                // Para fins de teste de paginação, comente-a por enquanto.
+
+                renderProducts(); // Renderiza os produtos filtrados/ordenados
+                renderPagination(); // Renderiza a paginação para os novos resultados
+                console.log('*** applyFiltersAndSort Concluído ***');
+            }
+            // Event listeners para os filtros e ordenação
+            brandFilter.addEventListener('change', applyFiltersAndSort);
+            sortBy.addEventListener('change', applyFiltersAndSort);
+
+            // Chama a função inicial para exibir os produtos e a paginação ao carregar a página
+            applyFiltersAndSort();
+
+
+            // SEUS SCRIPTS EXISTENTES DO HEADER E MENU MÓVEL (MANTIDOS AQUI)
+            const searchToggle = document.getElementById('search-toggle');
+            const searchOverlay = document.getElementById('search-overlay');
+            const closeSearch = document.querySelector('.close-search');
+
+            searchToggle.addEventListener('click', () => {
+                searchOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => {
+                    document.querySelector('.search-input').focus();
+                }, 400);
+            });
+
+            closeSearch.addEventListener('click', () => {
+                searchOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            searchOverlay.addEventListener('click', (event) => {
+                if (event.target === searchOverlay) {
+                    searchOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            document.querySelectorAll('.has-submenu').forEach(item => {
+                const submenuLink = item.querySelector('a');
+                submenuLink.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1024 || !matchMedia('(hover: hover)').matches) {
+                        e.preventDefault();
+                        item.classList.toggle('active-submenu');
+                    }
+                });
+
+                if (window.innerWidth <= 1024 || !matchMedia('(hover: hover)').matches) {
+                    item.addEventListener('click', (e) => {
+                        document.querySelectorAll('.has-submenu.active-submenu').forEach(openItem => {
+                            if (openItem !== item && !openItem.contains(e.target)) {
+                                openItem.classList.remove('active-submenu');
+                            }
+                        });
+                    });
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                document.querySelectorAll('.has-submenu.active-submenu').forEach(item => {
+                    if (!item.contains(e.target)) {
+                        item.classList.remove('active-submenu');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
