@@ -9,7 +9,1154 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+  /* --- Global Reset & Base Styles --- */
+:root {
+    /* Cores */
+    --color-primary: #C7AA8D; /* Dourado/Bronze mais suave e quente */
+    --color-primary-dark: #A98E70; /* Versão escura do dourado */
+    --color-text-dark: #2C2C2C; /* Quase preto, mas mais suave */
+    --color-text-medium: #6C6C6C; /* Cinza médio */
+    --color-bg-light: #FBF8F5; /* Off-white muito leve, quase branco */
+    --color-bg-medium: #F0EDE9; /* Um cinza claro/bege sutil para seções */
+    --color-white: #FFFFFF;
+    --color-footer-bg: #1A1A1A; /* Preto profundo para o footer */
+    --color-discount: #CC4444; /* Vermelho rubi, elegante */
+    --color-star: #FFD700; /* Ouro para as estrelas */
+
+    /* Fontes */
+    --font-heading: 'Cormorant Garamond', serif; /* Mais luxuosa e elegante */
+    --font-body: 'Inter', sans-serif; /* Moderna, clean e legível */
+
+    /* Sombras (sutis e elevadas) */
+    --shadow-subtle: 0 5px 20px rgba(0, 0, 0, 0.08);
+    --shadow-elevated: 0 10px 35px rgba(0, 0, 0, 0.15);
+
+    /* Transições comuns */
+    --transition-ease: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-light);
+    line-height: 1.7; /* Mais espaço entre as linhas */
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
+}
+
+/* Base elements */
+a {
+    text-decoration: none;
+    color: inherit; /* Herda a cor do pai */
+    transition: var(--transition-ease);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-text-dark);
+    font-weight: 600; /* Um pouco menos bold para um toque mais leve */
+}
+
+h2 {
+    font-size: 3.2rem; /* Títulos mais imponentes */
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+    letter-spacing: 0.05em; /* Pequeno espaçamento para luxo */
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px; /* Linha mais longa */
+    height: 1.5px; /* Mais fina */
+    background-color: var(--color-primary);
+    margin: 20px auto 0;
+    opacity: 0.7; /* Suaviza a linha */
+}
+
+/* --- Buttons --- */
+.cta-button, .btn-primary, .btn-outline, .btn-product-details {
+    display: inline-block;
+    padding: 1.1rem 3rem; /* Mais "gordinhos" */
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500; /* Mais leve */
+    text-transform: uppercase;
+    letter-spacing: 0.1em; /* Mais espaçamento entre letras */
+    transition: var(--transition-ease);
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    box-shadow: 0 8px 25px rgba(199, 170, 141, 0.4);
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    box-shadow: 0 10px 30px rgba(199, 170, 141, 0.6);
+    transform: translateY(-3px);
+}
+
+.btn-product-details { /* Novo estilo para botões de detalhes de produto */
+    background-color: transparent;
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-text-medium); /* Borda sutil */
+    padding: 0.8rem 2rem;
+    font-weight: 400; /* Mais leve */
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    border-radius: 5px; /* Bordas mais quadradas para detalhes */
+}
+
+.btn-product-details:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* --- Header --- */
+#main-header {
+    background-color: var(--color-white);
+    padding: 1.2rem 3rem; /* Mais padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-subtle);
+}
+
+.header-inner {
+    width: 100%;
+    max-width: 1600px; /* Conteúdo mais expandido */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2.2rem; /* Mais destaque */
+    font-weight: 700;
+    color: var(--color-text-dark);
+    letter-spacing: 0.08em; /* Espaçamento mais pronunciado */
+    white-space: nowrap; /* Garante que o logo não quebre linha */
+}
+
+/* Main Navigation */
+.main-nav .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 3rem; /* Mais espaçamento entre os itens */
+}
+
+.main-nav .nav-item a {
+    color: var(--color-text-dark);
+    font-family: var(--font-body);
+    font-size: 1.05rem; /* Levemente maior */
+    font-weight: 500;
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    position: relative; /* Para o underline hover */
+}
+
+.main-nav .nav-item a:hover {
+    color: var(--color-primary);
+}
+
+.main-nav .nav-item a::after { /* Underline animado */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease-out;
+}
+
+.main-nav .nav-item a:hover::after {
+    width: 100%;
+}
+
+.nav-arrow {
+    font-size: 0.65rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-item.has-submenu:hover .nav-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* Submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -15%; /* Alinha o submenu com a borda esquerda do item pai */
+    /* background-color: var(--color-white); */ /* Remova ou comente esta linha */
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco com 95% de opacidade */
+    /* Ou, se preferir uma cor mais clara do seu tema: */
+    /* background-color: var(--color-bg-light); */
+    
+    box-shadow: var(--shadow-elevated);
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 100px;
+    list-style: none;
+    padding: 0.5rem 0; /* Diminui um pouco o padding vertical para um visual mais compacto */
+    animation: fadeIn 0.3s ease-out forwards;
+    border-top: 3px solid var(--color-primary);
+}
+
+.nav-item.has-submenu {
+    position: relative; /* ESSENCIAL: Permite que o submenu posicione-se em relação a este pai */
+}
+
+.submenu li a {
+    padding: 0.75rem 1.5rem; /* Ajusta o padding para que o texto fique alinhado com o padding do submenu */
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    white-space: nowrap;
+    display: flex;
+    font-weight: 400;
+    text-align: center; /* Garante que o texto esteja alinhado à esquerda */
+}
+
+.submenu li a:hover {
+    background-color: var(--color-bg-medium); /* Fundo suave no hover */
+    color: var(--color-primary-dark);
+}
+
+.nav-item.has-submenu:hover .submenu {
+    display: block;
+}
+
+/* Header Actions (Search, Cart, Account) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem; /* Mais espaçamento entre os ícones */
+}
+
+.header-actions button,
+.header-actions a {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem; /* Ícones maiores */
+    color: var(--color-text-dark);
+    transition: var(--transition-ease);
+}
+
+.header-actions button:hover,
+.header-actions a:hover {
+    color: var(--color-primary);
+}
+
+.cart-icon, .account-icon {
+    display: flex; /* Para que o ícone fique centralizado se tiver texto, ou sozinho */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Search Overlay */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Mais escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1100;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-input-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 800px; /* Campo de busca maior */
+    background-color: var(--color-white);
+    border-radius: 10px;
+    box-shadow: var(--shadow-elevated);
+    padding: 2rem; /* Mais padding */
+    transform: translateY(-50px); /* Começa mais acima */
+    opacity: 0;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.search-overlay.active .search-input-wrapper {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1.2rem 1.8rem; /* Mais padding no input */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.2rem; /* Fonte maior */
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-medium); /* Fundo suave */
+    outline: none;
+    padding-right: 3.5rem;
+}
+
+.search-input::placeholder {
+    color: var(--color-text-medium);
+    opacity: 0.7;
+}
+
+.close-search {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.8rem; /* Ícone de fechar maior */
+    color: var(--color-text-dark);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-search:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .submenu {
+        /* No mobile, como o submenu é static, ele herda a largura do pai. */
+        /* O padding do .submenu e do .submenu li a já deve garantir o alinhamento. */
+        padding: 0.25rem 0 0.5rem 1rem; /* Mantenha o padding para mobile */
+        background-color: transparent; /* No mobile, ele pode ser transparente ou uma cor diferente */
+    }
+
+    .submenu li a {
+        padding: 0.75rem 0; /* Mantém o padding vertical, mas remove o horizontal se já estiver no pai */
+        text-align: left; /* Garante alinhamento à esquerda */
+    }
+}
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  background-image: url('./image/FUNDO.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background-color: rgba(20, 14, 9, 0.55); /* leve escurecimento */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff7ef;
+  max-width: 700px;
+  padding: 20px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-content h1 {
+  color: #FFFFFF;
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 12px 26px;
+  background-color: #b98b68;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #a07452;
+  box-shadow: 0 0 10px rgba(185, 139, 104, 0.4);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Seção de Categorias */
+.categorias {
+  padding: 80px 40px;
+  background-color: #fcf8f5;
+  text-align: center;
+}
+
+.categorias h2 {
+  font-size: 32px;
+  color: #3e2f22;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+.categoria-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+
+.categoria-card {
+  width: 300px;
+  height: 420px; /* Aumentei para garantir espaço extra */
+  background-color: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Para espaçar conteúdo verticalmente */
+  padding-top: 0;
+}
+
+.categoria-card img {
+  width: 100%;
+  height: 300px; /* Agora com 300px de altura */
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+  border-bottom: 1px solid #eee;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+
+.categoria-card h3 {
+  font-size: 20px;
+  color: #3e2f22;
+  margin: 20px 0 10px;
+}
+
+.categoria-card a {
+  display: inline-block;
+  margin-bottom: 30px; /* Aumentado de 20px para 30px */
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #b98b68, #9c7650);
+  color: white;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  box-shadow: 0 4px 12px rgba(185, 139, 104, 0.6);
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.categoria-card a:hover {
+  background: linear-gradient(135deg, #d4b08c, #b69870);
+  box-shadow: 0 6px 20px rgba(212, 176, 140, 0.8);
+  transform: scale(1.05);
+}
+
+
+/* Hover total no card */
+.categoria-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.categoria-card:hover img {
+  transform: scale(1.08);
+}
+/* --- Sections General --- */
+section {
+    padding: 7rem 3rem; /* Mais padding nas seções */
+    max-width: 1600px; /* Alinhamento com o header */
+    margin: 0 auto;
+}
+
+/* --- Featured Categories --- */
+.section-featured-categories {
+    background-color: var(--color-bg-light);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    justify-items: center;
+}
+
+/* Ajustes para cards de categoria */
+.category-card {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Altura generosa */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+    transition: var(--transition-ease);
+}
+
+.category-card.large-card { /* Exemplo de card maior */
+    grid-column: span 2; /* Ocupa duas colunas em desktop */
+    height: 500px;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1); /* Transição mais suave */
+}
+
+.category-card:hover img {
+    transform: scale(1.08); /* Zoom maior e mais suave */
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%); /* Gradiente escuro para texto legível */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 2.5rem;
+    color: var(--color-white);
+    opacity: 1; /* Sempre visível */
+    transition: background 0.3s ease;
+}
+
+.category-card:hover .card-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 50%);
+}
+
+.card-overlay h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.view-more {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary); /* Cor de destaque */
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+}
+
+.category-card:hover .view-more {
+    transform: translateY(0);
+    opacity: 1;
+    color: var(--color-white); /* Mudar para branco no hover do card */
+}
+
+.view-more i {
+    font-size: 0.8rem;
+    transform: translateX(-5px); /* Inicia ligeiramente para trás */
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .view-more i {
+    transform: translateX(0); /* Desliza para frente */
+}
+
+
+/* --- Highlighted Products --- */
+.section-highlighted-products {
+    background-color: var(--color-bg-medium); /* Fundo sutilmente diferente */
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem; /* Mais espaço entre os produtos */
+    justify-items: center;
+}
+
+.product-card {
+    background-color: var(--color-white);
+    border-radius: 8px; /* Cantos menos arredondados */
+    box-shadow: var(--shadow-subtle);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-ease);
+    width: 100%;
+    max-width: 380px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-elevated);
+}
+
+.product-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px; /* Altura maior para imagens de produto */
+    overflow: hidden;
+    background-color: #F8F8F8; /* Fundo mais claro para destaque */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ou cover, dependendo das imagens */
+    object-position: center;
+    transition: transform 0.5s ease;
+    padding: 1rem; /* Pequeno padding para produtos tipo instrumento */
+}
+
+.product-card:hover .product-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.discount-tag {
+    top: 18px; /* Mais afastado da borda */
+    left: 18px;
+    background-color: var(--color-discount);
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+    border-radius: 3px; /* Mais quadrado */
+    font-weight: 600;
+}
+
+.product-info {
+    padding: 1.8rem; /* Mais padding */
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem; /* Título do produto */
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.product-info .description {
+    font-size: 0.9rem;
+    color: var(--color-text-medium);
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.rating {
+    font-size: 0.95rem;
+    color: var(--color-star);
+    margin-bottom: 1rem;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.old-price {
+    font-size: 0.95rem;
+    color: var(--color-text-medium);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.current-price {
+    font-size: 1.6rem; /* Preço atual maior */
+    color: var(--color-text-dark);
+    font-weight: 700;
+}
+
+/* --- Testimonials Section --- */
+.section-testimonials {
+    background-color: var(--color-bg-light);
+}
+
+.section-testimonials h2 {
+    font-style: italic; /* O "Vozes da Nossa Orquestra" com estilo */
+}
+
+.testimonials-slider {
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* Removido display grid padrão, para preparar para slider real (ex: Swiper.js) */
+    display: flex; /* Para ver os itens um ao lado do outro antes de um slider real */
+    overflow-x: auto; /* Permite rolagem lateral se for muitos itens */
+    gap: 2.5rem;
+    scroll-snap-type: x mandatory; /* Para rolagem suave */
+    padding-bottom: 1rem; /* Espaço para a barra de rolagem */
+}
+
+.testimonial-item {
+    flex: 0 0 350px; /* Cada item tem uma largura fixa, para efeito de slider */
+    scroll-snap-align: start;
+    background-color: var(--color-bg-medium); /* Fundo suave */
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-subtle);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: var(--transition-ease);
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-elevated);
+}
+
+.testimonial-item img {
+    width: 80px; /* Avatares maiores */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--color-primary); /* Borda mais proeminente */
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-item blockquote {
+    font-size: 1.15rem; /* Fonte maior para o texto */
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--color-text-dark);
+    position: relative;
+    padding-left: 2.5rem; /* Mais padding para a aspa */
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+}
+
+.testimonial-item blockquote::before {
+    font-size: 4rem; /* Aspa maior */
+    color: var(--color-primary-dark);
+    opacity: 0.3; /* Mais suave */
+    top: -0.5rem;
+    left: 0;
+}
+
+.testimonial-item .author {
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-align: right;
+    width: 100%;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--color-footer-bg);
+    color: #E0E0E0;
+    padding: 4.5rem 3rem 2rem;
+    font-family: var(--font-body);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Colunas mais flexíveis */
+    gap: 3rem;
+    max-width: 1600px;
+    margin: 0 auto 3rem;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem; /* Logo do footer maior */
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: #B0B0B0;
+    line-height: 1.5;
+}
+
+.main-footer h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.footer-nav ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-nav ul li a {
+    color: #E0E0E0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--color-primary-light);
+}
+
+.footer-contact p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    color: #E0E0E0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.footer-contact i {
+    font-size: 1.1rem;
+    color: var(--color-primary-light);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.social-icons a {
+    color: #E0E0E0;
+    font-size: 1.5rem;
+    width: 45px; /* Ícones maiores */
+    height: 45px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda mais suave */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-ease);
+}
+
+.social-icons a:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background-color: rgba(199, 170, 141, 0.15); /* Fundo mais sutil no hover */
+}
+
+.footer-copy {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Linha divisória mais fina e suave */
+    font-size: 0.85rem;
+    color: #A0A0A0;
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 1200px) {
+    .header-inner {
+        padding: 0 1.5rem;
+    }
+    .main-nav .nav-list {
+        gap: 2rem;
+    }
+    .hero-content h1 {
+        font-size: 4.5rem;
+    }
+    .hero-description {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 2.8rem;
+    }
+    section {
+        padding: 6rem 2.5rem;
+    }
+    .category-card.large-card {
+        height: 450px;
+    }
+    .product-card {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .logo {
+        flex-basis: 100%; /* Logo ocupa a linha toda */
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    .main-nav {
+        order: 3; /* Move a navegação para baixo */
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .main-nav .nav-list {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    .header-actions {
+        order: 2; /* Move as ações para cima, ao lado do logo */
+        justify-content: center;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.8rem;
+    }
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    h2 {
+        font-size: 2.4rem;
+    }
+    section {
+        padding: 5rem 2rem;
+    }
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .category-card.large-card {
+        grid-column: span 1; /* Não ocupa 2 colunas em telas menores */
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    #main-header {
+        padding: 1rem 1rem;
+    }
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    .logo {
+        font-size: 1.8rem;
+        text-align: left;
+    }
+    .main-nav {
+        width: 100%;
+        margin-top: 0;
+    }
+    .main-nav .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem; /* Menos espaçamento entre itens do menu mobile */
+    }
+    .main-nav .nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Linha divisória suave */
+        padding-bottom: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+    .main-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+    .main-nav .nav-item a {
+        padding: 0.75rem 0;
+        font-size: 0.95rem;
+        justify-content: space-between;
+    }
+    .main-nav .nav-item a::after { /* Remove underline animado no mobile */
+        display: none;
+    }
+    .submenu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0.25rem 0 0.5rem 1rem;
+        background-color: transparent;
+        border-top: none;
+    }
+    /* Mobile submenu toggle */
+    .nav-item.active-submenu .submenu {
+        display: block;
+    }
+    .nav-item.has-submenu:hover .submenu { /* Desativa hover para mobile */
+        display: none;
+    }
+    .nav-item.active-submenu .nav-arrow {
+        transform: rotate(180deg);
+    }
+    .nav-item.has-submenu:hover .nav-arrow { /* Desativa hover para mobile */
+        transform: rotate(0deg);
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: flex-end; /* Alinha ícones à direita */
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+    .header-actions button, .header-actions a {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        height: 65vh;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-description {
+        font-size: 1rem;
+    }
+    .cta-button {
+        padding: 1rem 2.2rem;
+        font-size: 0.9rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    h2::after {
+        width: 50px;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    .category-card, .product-card, .testimonial-item {
+        max-width: 100%;
+        flex-shrink: 0; /* Para o slider de depoimentos */
+    }
+    .testimonial-item {
+        width: 90vw; /* Ocupa 90% da viewport width para slider mobile */
+    }
+    .product-info h3 {
+        font-size: 1.2rem;
+    }
+    .current-price {
+        font-size: 1.3rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-nav ul, .footer-contact, .social-icons {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    section {
+        padding: 3rem 1rem;
+    }
+    .testimonial-item {
+        padding: 2rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+  <style>
 </head>
 
 <body>
@@ -339,3 +1486,4 @@
 </body>
 
 </html>
+
