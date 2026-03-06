@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bach Musicale | Excelência em Instrumentos Clássicos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar instrumento...">
+        </div>
+        <h1 class="logo">BACH MUSICALE</h1>
+        <nav class="menu">
+            <a href="#" class="filter-btn" data-category="all">Todos</a>
+            <a href="#" class="filter-btn" data-category="Cordas">Cordas</a>
+            <a href="#" class="filter-btn" data-category="Madeiras">Madeiras</a>
+            <a href="#" class="filter-btn" data-category="Metais">Metais</a>
+            <a href="#" class="filter-btn" data-category="Teclas">Teclas</a>
+        </nav>
+        <div class="admin-icon">
+            <a href="admin.html"><img src="https://img.icons8.com/ios/24/000000/user-lock.png" alt="Admin"></a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="fade-in">Onde a música encontra a excelência</h2>
+            <p class="fade-in-delay">Instrumentos selecionados para artistas que buscam mais do que som — buscam alma.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="section-title">
+            <span>Coleção em Destaque</span>
+            <h3>Instrumentos de Prestígio</h3>
+        </section>
+
+        <div id="productGrid" class="product-grid">
+            </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h4>BACH MUSICALE</h4>
+            <p>Tradição e elegância em cada nota.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a> | <a href="#">WhatsApp</a> | <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
