@@ -1,0 +1,113 @@
+:root {
+    --bg-color: #FDFCF8; /* Creme suave */
+    --gold: #C5A059;
+    --text-dark: #1A1A1A;
+    --text-light: #666;
+    --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+/* Header */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    background: rgba(253, 252, 248, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.logo { font-size: 1.8rem; letter-spacing: 4px; }
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin: 0 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.menu a:hover { color: var(--gold); }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('https://images.unsplash.com/photo-1520527057852-44c0e5c5824c?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero h2 { font-size: 3.5rem; margin-bottom: 20px; }
+
+/* Product Cards */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 50px;
+}
+
+.card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 2px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    border: 1px solid var(--gold);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.btn-buy {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--text-dark);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.btn-buy:hover { background: var(--gold); }
+
+/* Animações */
+.fade-in { animation: fadeIn 2s ease-in; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
