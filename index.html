@@ -521,12 +521,14 @@ footer{background:var(--dark2);border-top:1px solid rgba(192,57,43,.1);padding:4
      para funcionar com onclick="" no HTML.
 ════════════════════════════════════════════════════ -->
 <script type="module">
+// 1. Importações sempre no topo
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getFirestore, collection, addDoc, getDocs,
   updateDoc, deleteDoc, doc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+// 2. Configuração
 const firebaseConfig = {
   apiKey:            "AIzaSyCmVMOEii9Qxbyq34gF1rxhK4gAEw-NhTY",
   authDomain:        "bachmusicale-ce072.firebaseapp.com",
@@ -542,31 +544,38 @@ const db  = getFirestore(app);
 let products      = [];
 let currentFilter = 'Todos';
 
+// 3. Funções de Carga
 async function loadProducts() {
-  products = [];
-  const snap = await getDocs(collection(db, "products"));
-  snap.forEach(d => products.push({ firebaseId: d.id, ...d.data() }));
-  renderProducts(currentFilter);
-  updateCounts();
+  try {
+    const snap = await getDocs(collection(db, "products"));
+    products = [];
+    snap.forEach(d => products.push({ firebaseId: d.id, ...d.data() }));
+    renderProducts(currentFilter);
+    updateCounts();
+    if(document.getElementById('admin-panel').style.display === 'flex') renderAdminTable();
+  } catch (err) {
+    console.error("Erro ao carregar produtos:", err);
+  }
 }
 
-const pages = ['home','produtos','sobre','contato'];
+// 4. Interface e Navegação
 function showPage(p) {
+  const pages = ['home','produtos','sobre','contato'];
   pages.forEach(pg => { const el = document.getElementById('page-'+pg); if(el) el.style.display='none'; });
-  document.getElementById('main-footer').style.display = 'block';
-  ['home','sobre','contato'].forEach(n => { const a=document.getElementById('nav-'+n); if(a) a.classList.remove('active'); });
+  
   const navMap = {home:'nav-home',sobre:'nav-sobre',contato:'nav-contato',produtos:'nav-produtos'};
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   if(navMap[p]) document.getElementById(navMap[p])?.classList.add('active');
+
   const el = document.getElementById('page-'+p);
   if(el) el.style.display='block';
+  
   if(p==='home') updateCounts();
   if(p==='produtos') renderProducts(currentFilter);
+  
   window.scrollTo({top:0,behavior:'smooth'});
   setTimeout(initFadeIn,100);
 }
-
-function fmtPrice(n){ return 'R$ '+Number(n).toLocaleString('pt-BR',{minimumFractionDigits:0}); }
-const catIcons = {Cordas:'🎸',Madeiras:'🎷',Metais:'🎺',Teclas:'🎹',Percussão:'🥁'};
 
 function filterProducts(cat) {
   currentFilter = cat;
@@ -574,37 +583,90 @@ function filterProducts(cat) {
   renderProducts(cat);
   document.querySelectorAll('.filter-tab').forEach(t => {
     const lbl = t.textContent.trim();
-    t.classList.toggle('active', lbl===cat||(cat==='Todos'&&lbl==='Todos'));
+    t.classList.toggle('active', lbl===cat);
   });
   const title = document.getElementById('produtos-title');
   if(title) title.textContent = cat==='Todos'?'Todos os Instrumentos':cat;
 }
 
+// 5. Renderização
 function renderProducts(cat) {
   const grid = document.getElementById('products-grid');
   if(!grid) return;
   const filtered = cat==='Todos' ? products : products.filter(p=>p.cat===cat);
   const lbl = document.getElementById('product-count-label');
   if(lbl) lbl.textContent = filtered.length+' instrumento'+(filtered.length===1?'':'s');
-  grid.innerHTML = filtered.map(p => {
-    const imgBlock = p.image
-      ? `<img src="${p.image}" alt="${p.name}" loading="lazy">`
-      : `<div class="product-img-placeholder">${catIcons[p.cat]||'🎵'}</div>`;
-    const badge    = p.badge    ? `<div class="product-badge">${p.badge}</div>` : '';
-    const oldPrice = p.oldPrice ? `<div class="product-old-price">${fmtPrice(p.oldPrice)}</div>` : '';
-    const desc     = p.desc     ? `<p class="product-desc">${p.desc}</p>` : '';
-    return `<div class="product-card fade-in">
-      <div class="product-img">${imgBlock}${badge}</div>
+  
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card fade-in">
+      <div class="product-img">
+        ${p.image ? `<img src="${p.image}" alt="${p.name}">` : `<div class="product-img-placeholder">🎵</div>`}
+        ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
+      </div>
       <div class="product-info">
         <div class="product-cat">${p.cat}</div>
         <div class="product-name">${p.name.toUpperCase()}</div>
         <div class="product-brand">${p.brand}</div>
-        ${desc}
-        <div class="product-price-wrap"><div class="product-price">${fmtPrice(p.price)}</div>${oldPrice}</div>
+        <p class="product-desc">${p.desc || ''}</p>
+        <div class="product-price-wrap">
+          <div class="product-price">R$ ${Number(p.price).toLocaleString('pt-BR')}</div>
+          ${p.oldPrice ? `<div class="product-old-price">R$ ${Number(p.oldPrice).toLocaleString('pt-BR')}</div>` : ''}
+        </div>
         <div class="product-actions"><button class="btn-primary"><span>Ver Detalhes</span></button></div>
-      </div></div>`;
-  }).join('');
+      </div>
+    </div>`).join('');
   setTimeout(initFadeIn,80);
+}
+
+// 6. Admin e CRUD
+async function saveProduct() {
+  const name = document.getElementById('edit-name').value.trim();
+  const brand = document.getElementById('edit-brand').value.trim();
+  const desc = document.getElementById('edit-desc').value.trim();
+  const cat = document.getElementById('edit-cat').value;
+  const price = parseFloat(document.getElementById('edit-price').value);
+  const oldPriceVal = parseFloat(document.getElementById('edit-old-price').value);
+  const image = document.getElementById('edit-image').value.trim();
+
+  if(!name || isNaN(price)) return alert("Preencha os campos obrigatórios");
+
+  const data = { name, brand, desc, cat, price, oldPrice: isNaN(oldPriceVal)?null:oldPriceVal, image, badge: null };
+  const id = document.getElementById('edit-id').value;
+
+  try {
+    if(id) await updateDoc(doc(db,"products",id), data);
+    else await addDoc(collection(db,"products"), data);
+    closeProductModal();
+    await loadProducts();
+  } catch (err) { console.error(err); }
+}
+
+async function deleteProduct(id) {
+  if(!confirm('Excluir este produto?')) return;
+  await deleteDoc(doc(db,"products",id));
+  await loadProducts();
+}
+
+// FUNÇÃO PARA O TESTE DE 100 ITENS (Corrigida)
+window.saveProductManual = async function(data) {
+    try {
+        await addDoc(collection(db, "products"), data);
+    } catch (err) {
+        console.error("Erro no insert manual:", err);
+    }
+};
+
+// Funções de auxilio (Modal, Login, Tabela)
+function renderAdminTable() {
+  const tbody=document.getElementById('admin-tbody');
+  if(!tbody) return;
+  tbody.innerHTML=products.map(p=>`<tr>
+    <td>${p.name}</td><td>${p.brand}</td><td>${p.cat}</td>
+    <td style="color:var(--accent2)">R$ ${Number(p.price).toLocaleString('pt-BR')}</td>
+    <td><div class="table-actions">
+      <button class="btn-edit" onclick="openProductModal('${p.firebaseId}')">Editar</button>
+      <button class="btn-del" onclick="deleteProduct('${p.firebaseId}')">Excluir</button>
+    </div></td></tr>`).join('');
 }
 
 function updateCounts() {
@@ -616,6 +678,48 @@ function updateCounts() {
   if(stat) stat.textContent = products.length;
 }
 
+// Exportar para o Window
+window.showPage = showPage;
+window.filterProducts = filterProducts;
+window.saveProduct = saveProduct;
+window.deleteProduct = deleteProduct;
+window.openProductModal = (id) => {
+    const modal=document.getElementById('product-modal');
+    if(!id) {
+        document.getElementById('edit-id').value='';
+        document.querySelectorAll('.admin-form-grid input').forEach(i=>i.value='');
+    } else {
+        const p=products.find(x=>x.firebaseId===id);
+        document.getElementById('edit-id').value=p.firebaseId;
+        document.getElementById('edit-name').value=p.name;
+        document.getElementById('edit-brand').value=p.brand;
+        document.getElementById('edit-desc').value=p.desc;
+        document.getElementById('edit-cat').value=p.cat;
+        document.getElementById('edit-price').value=p.price;
+        document.getElementById('edit-old-price').value=p.oldPrice || '';
+        document.getElementById('edit-image').value=p.image;
+    }
+    modal.classList.add('active');
+};
+window.closeProductModal = () => document.getElementById('product-modal').classList.remove('active');
+window.openLoginModal = () => document.getElementById('login-modal').classList.add('active');
+window.closeLoginModal = () => document.getElementById('login-modal').classList.remove('active');
+window.doLogin = () => {
+    const u=document.getElementById('login-user').value;
+    const p=document.getElementById('login-pass').value;
+    if(u==='Admin'&&p==='Admin123!') { window.closeLoginModal(); document.getElementById('admin-panel').classList.add('active'); adminTab('produtos'); }
+    else document.getElementById('login-error').style.display='block';
+};
+window.closeAdmin = () => document.getElementById('admin-panel').classList.remove('active');
+window.adminTab = adminTab;
+
+function adminTab(tab) {
+  const content=document.getElementById('admin-content');
+  content.innerHTML=`<div class="admin-toolbar"><h2>Gerenciar Produtos</h2><button class="btn-add" onclick="openProductModal(null)">+ Novo Produto</button></div>
+    <table class="admin-table"><thead><tr><th>Nome</th><th>Marca</th><th>Categoria</th><th>Preço</th><th>Ações</th></tr></thead>
+    <tbody id="admin-tbody"></tbody></table>`;
+  renderAdminTable();
+}
 
 function initFadeIn() {
   const io = new IntersectionObserver(entries => {
@@ -624,119 +728,7 @@ function initFadeIn() {
   document.querySelectorAll('.fade-in:not(.visible)').forEach(el=>io.observe(el));
 }
 
-function openLoginModal() {
-  document.getElementById('login-modal').classList.add('active');
-  document.getElementById('login-user').value='';
-  document.getElementById('login-pass').value='';
-  document.getElementById('login-error').style.display='none';
-}
-function closeLoginModal(){ document.getElementById('login-modal').classList.remove('active'); }
-function doLogin() {
-  const u=document.getElementById('login-user').value;
-  const p=document.getElementById('login-pass').value;
-  if(u==='Admin'&&p==='Admin123!'){ closeLoginModal(); openAdmin(); }
-  else document.getElementById('login-error').style.display='block';
-}
-document.getElementById('login-pass').addEventListener('keydown',e=>{ if(e.key==='Enter') doLogin(); });
-
-function openAdmin(){ document.getElementById('admin-panel').classList.add('active'); adminTab('produtos'); }
-function closeAdmin(){ document.getElementById('admin-panel').classList.remove('active'); }
-
-function adminTab(tab) {
-  document.querySelectorAll('.admin-nav-item').forEach(el=>el.classList.remove('active'));
-  if(tab==='novo'){ document.getElementById('sidebar-produtos')?.classList.add('active'); openProductModal(null); tab='produtos'; }
-  else document.getElementById('sidebar-'+tab)?.classList.add('active');
-  const content=document.getElementById('admin-content');
-  content.innerHTML=`<div class="admin-toolbar"><h2>Gerenciar Produtos</h2><button class="btn-add" onclick="openProductModal(null)">+ Novo Produto</button></div>
-    <table class="admin-table"><thead><tr><th>Nome</th><th>Marca</th><th>Categoria</th><th>Preço</th><th>Ações</th></tr></thead>
-    <tbody id="admin-tbody"></tbody></table>`;
-  renderAdminTable();
-}
-
-function renderAdminTable() {
-  const tbody=document.getElementById('admin-tbody');
-  if(!tbody) return;
-  tbody.innerHTML=products.map(p=>`<tr>
-    <td>${p.name}</td><td>${p.brand}</td><td>${p.cat}</td>
-    <td style="color:var(--accent2)">${fmtPrice(p.price)}</td>
-    <td><div class="table-actions">
-      <button class="btn-edit" onclick="openProductModal('${p.firebaseId}')">Editar</button>
-      <button class="btn-del" onclick="deleteProduct('${p.firebaseId}')">Excluir</button>
-    </div></td></tr>`).join('');
-}
-
-async function deleteProduct(id) {
-  if(!confirm('Excluir este produto?')) return;
-  await deleteDoc(doc(db,"products",id));
-  await loadProducts(); renderAdminTable();
-}
-
-function openProductModal(id) {
-  const modal=document.getElementById('product-modal');
-  const title=document.getElementById('modal-product-title');
-  if(id===null) {
-    title.textContent='Novo Produto';
-    ['edit-id','edit-name','edit-brand','edit-desc','edit-price','edit-old-price','edit-image'].forEach(f=>{ document.getElementById(f).value=''; });
-    document.getElementById('edit-cat').value='Cordas';
-  } else {
-    const p=products.find(x=>x.firebaseId===id);
-    if(!p) return;
-    title.textContent='Editar Produto';
-    document.getElementById('edit-id').value       = p.firebaseId;
-    document.getElementById('edit-name').value     = p.name      ||'';
-    document.getElementById('edit-brand').value    = p.brand     ||'';
-    document.getElementById('edit-desc').value     = p.desc      ||'';
-    document.getElementById('edit-cat').value      = p.cat       ||'Cordas';
-    document.getElementById('edit-price').value    = p.price     ||'';
-    document.getElementById('edit-old-price').value= p.oldPrice  ||'';
-    document.getElementById('edit-image').value    = p.image     ||'';
-  }
-  modal.classList.add('active');
-}
-
-function closeProductModal(){ document.getElementById('product-modal').classList.remove('active'); }
-
-async function saveProduct() {
-  const name     = document.getElementById('edit-name').value.trim();
-  const brand    = document.getElementById('edit-brand').value.trim();
-  const desc     = document.getElementById('edit-desc').value.trim();
-  const cat      = document.getElementById('edit-cat').value;
-  const price    = parseFloat(document.getElementById('edit-price').value);
-  const oldPriceR= parseFloat(document.getElementById('edit-old-price').value);
-  const oldPrice = isNaN(oldPriceR)?null:oldPriceR;
-  const image    = document.getElementById('edit-image').value.trim();
-  if(!name||!brand||isNaN(price)){alert('Preencha nome, marca e preço.');return;}
-  const data={name,brand,desc,cat,price,oldPrice,image,badge:null};
-  const id=document.getElementById('edit-id').value;
-  if(id) await updateDoc(doc(db,"products",id),data);
-  else   await addDoc(collection(db,"products"),data);
-  closeProductModal(); await loadProducts(); renderAdminTable();
-}
-  window.saveProductManual = async function(data) {
-    import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-    // 'db' deve ser a variável que você inicializou o Firestore
-    await addDoc(collection(db, "products"), data);
-};
-
-document.getElementById('login-modal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeLoginModal(); });
-document.getElementById('product-modal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeProductModal(); });
-
-document.addEventListener('DOMContentLoaded', async ()=>{ initFadeIn(); await loadProducts(); });
-setTimeout(initFadeIn,500);
-
-/* ── Expor ao HTML (obrigatório com type="module") ── */
-window.showPage          = showPage;
-window.filterProducts    = filterProducts;
-window.openLoginModal    = openLoginModal;
-window.closeLoginModal   = closeLoginModal;
-window.doLogin           = doLogin;
-window.openAdmin         = openAdmin;
-window.closeAdmin        = closeAdmin;
-window.adminTab          = adminTab;
-window.openProductModal  = openProductModal;
-window.closeProductModal = closeProductModal;
-window.saveProduct       = saveProduct;
-window.deleteProduct     = deleteProduct;
+document.addEventListener('DOMContentLoaded', loadProducts);
 </script>
 </body>
 </html>
