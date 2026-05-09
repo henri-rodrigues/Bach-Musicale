@@ -41,7 +41,14 @@ body{background:var(--dark);color:var(--white);font-family:var(--sans);font-weig
 
 /* NAV */
 #nav{position:fixed;top:3px;left:0;right:0;z-index:9000;transition:all .4s;padding:0 4vw;height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent}
-#nav.scrolled{background:rgba(250,247,242,.96);backdrop-filter:blur(14px);border-bottom-color:rgba(192,57,43,.15);box-shadow:0 2px 24px rgba(26,18,8,.06)}
+/* Substitua o bloco atual por este */
+#nav.scrolled {
+  background-color: rgba(250, 247, 242, 0.98) !important; 
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(192, 57, 43, 0.15);
+  box-shadow: 0 2px 24px rgba(26, 18, 8, 0.06);
+  height: 65px; /* Opcional: reduz levemente a altura ao rolar */
+}
 .nav-logo{display:flex;align-items:center;gap:.75rem;cursor:pointer;text-decoration:none}
 .nav-logo img{height:42px;width:auto;object-fit:contain;transition:transform .3s}
 .nav-logo:hover img{transform:scale(1.06)}
@@ -557,6 +564,19 @@ async function loadProducts() {
     console.error("Erro ao carregar produtos:", err);
   }
 }
+  // --- COLOQUE ESTE BLOCO AQUI ---
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 30) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+// ------------------------------
+
+// Exportar para o Window
+window.showPage = showPage;
 
 // 4. Interface e Navegação
 function showPage(p) {
