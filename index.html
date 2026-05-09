@@ -616,9 +616,6 @@ function updateCounts() {
   if(stat) stat.textContent = products.length;
 }
 
-window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY>30);
-});
 
 function initFadeIn() {
   const io = new IntersectionObserver(entries => {
