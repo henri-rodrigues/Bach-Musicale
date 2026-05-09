@@ -612,11 +612,38 @@ function renderProducts(cat) {
           <div class="product-price">R$ ${Number(p.price).toLocaleString('pt-BR')}</div>
           ${p.oldPrice ? `<div class="product-old-price">R$ ${Number(p.oldPrice).toLocaleString('pt-BR')}</div>` : ''}
         </div>
-        <div class="product-actions"><button class="btn-primary"><span>Ver Detalhes</span></button></div>
+
+<div class="product-actions">
+  <button class="btn-primary" onclick="contactWhatsApp('${p.name}')">
+    <span>Tenho Interesse</span>
+  </button>
+</div>
       </div>
     </div>`).join('');
   setTimeout(initFadeIn,80);
 }
+
+  // 1. A função que cria a lógica
+function contactWhatsApp(productName) {
+    // Definimos o número (apenas números, com código do país e DDD)
+    const phoneNumber = "5516997700883"; 
+    
+    // Criamos a mensagem personalizada usando o nome do produto que veio do card
+    const message = `Olá! Vi o produto "${productName}" no site BachMusicale e gostei bastante. Poderia me dar mais detalhes?`;
+    
+    // O encodeURIComponent transforma espaços e acentos em códigos que o navegador entende
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Montamos a URL final do WhatsApp
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    // Abrimos em uma nova aba
+    window.open(whatsappUrl, '_blank');
+}
+
+// 2. A PARTE MAIS IMPORTANTE: Expor para o navegador
+// Sem essa linha, o onclick="contactWhatsApp(...)" do botão vai dar erro de "function not defined"
+window.contactWhatsApp = contactWhatsApp;
 
 // 6. Admin e CRUD
 async function saveProduct() {
